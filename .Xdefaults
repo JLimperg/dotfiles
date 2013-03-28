@@ -1,0 +1,13 @@
+URxvt.font:              xft:DejaVu Sans Mono:pixelsize=15
+URxvt.background:        #EEEEEE
+URxvt.foreground:        #000000
+URxvt.saveLines:         10000
+URxvt.scrollBar:         false
+URxvt.secondaryScroll:   true
+URxvt.scrollTtyKeypress: true
+URxvt.scrollTtyOutput:   false
+URxvt.jumpScroll:        true
+URxvt.skipScroll:        false
+URxvt.url-launcher:      firefox
+URxvt.perl-ext-common:   default,matcher
+URxvt.matcher.button:    1

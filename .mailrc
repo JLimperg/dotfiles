@@ -1,0 +1,50 @@
+set append
+set asksub
+set askattach
+set datefield
+set dot
+set editheaders
+set emptystart
+set fullnames
+set keep
+set markanswered
+set noheaders
+set quiet
+set record-resent
+set showlast
+set showname
+
+set imap-keepalive=300
+set newmail=nopoll
+
+set folder=mail
+
+set pipe-text/html="lynx -dump -force_html -stdin"
+
+account p {
+  set from="Jannis Limperg <jannis@limperg.de>"
+  set ssl-verify=warn
+  shortcut imap imaps://jannis@limperg.de
+  fi imaps://jannis@limperg.de/
+  set record=@Sent
+}
+
+account ls {
+  set from="Jannis Limperg <Jannis.Limperg@mars.uni-freiburg.de>"
+  shortcut imap imaps://hiwisrphil@jura.uni-freiburg.de
+  fi imaps://hiwisrphil@jura.uni-freiburg.de/
+  set record=@Sent
+}
+
+account u {
+  set from="Jannis Limperg <Jannis.Limperg@mars.uni-freiburg.de>"
+  shortcut imap imaps://Jannis.Limperg@mars.uni-freiburg.de
+  fi imaps://Jannis.Limperg@mars.uni-freiburg.de/
+  set record=@Sent
+}
+
+define t {
+  move @Trash
+}
+
+set NAIL_EXTRA_RC=/home/jannis/.mailrc-pws
