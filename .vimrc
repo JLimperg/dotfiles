@@ -10,6 +10,7 @@ noremap                  l k
 noremap                  k j
 noremap                  j h
 noremap                  t <C-]>
+noremap                  T <C-T>
 
 nnoremap                 <C-w>ö     <C-w>l
 nnoremap                 <C-w>l     <C-w>k
@@ -21,18 +22,32 @@ nnoremap                 <C-W><C-l> <C-W>k
 nnoremap                 <C-W><C-k> <C-W>j
 nnoremap                 <C-W><C-j> <C-W>h
 
-" Leader
-:let mapleader = "-"
+nnoremap                 J ^
+nnoremap                 Ö $
+
+nnoremap                 <Space> <C-F>
+
+" Esc mapping for insert
+inoremap                 kl    <Esc>
+inoremap                 <Esc> <nop>
 
 " Leader mappings
-noremap  <silent>        <Leader>w :write<LF>
-noremap  <silent>        <Leader>q :write<LF>:quit<LF>
-noremap  <silent>        <Leader>h :new<LF>
-noremap  <silent>        <Leader>v :vnew<LF>
+:let mapleader = "h"
+
+noremap  <silent>        <Leader>w :write<CR>
+noremap  <silent>        <Leader>q :write<CR>:quit<CR>
+
+noremap  <silent>        <Leader>h :new<CR>
+noremap  <silent>        <Leader>v :vnew<CR>
 noremap                  <Leader>fi :find 
-noremap                  <Leader>fs :sfind 
+noremap                  <Leader>fh :sfind 
 noremap                  <Leader>fv :vertical :sfind 
-noremap  <silent>        <Leader>sh :set hlsearch!<LF>
+
+noremap <silent>         <Leader>sv :source ~/.vimrc<CR>
+
+noremap <silent>         <Leader>sh :nohlsearch<CR>
+noremap                  <Leader>su :s/\v
+noremap <silent>         <Leader>c  :call CommentLine()<CR>
 
 " Path
 set path=.,,**
