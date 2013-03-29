@@ -52,25 +52,27 @@ noremap <silent>         <Leader>c  :call CommentLine()<CR>
 " Path
 set path=.,,**
 
-" Numerous helpful options
+" General Options
 set number
 set colorcolumn=80
+set textwidth=79
 set autoindent
 set shiftwidth=2
 set tabstop=2
 set expandtab
 set list listchars=tab:»·,trail:·
 set equalalways
+set hlsearch
+set spelllang=de
+set clipboard=unnamed
 
-" line wrapping
+" Line wrapping
 nnoremap l gk
 nnoremap k gj
 vnoremap l gk
 vnoremap k gj
 set nowrap
 
-" copy&paste
-set clipboard=unnamed
 
 " LaTeX
 set shellslash
@@ -82,27 +84,4 @@ let g:Tex_DefaultTargetFormat = 'pdf'
 let g:Tex_MultipleCompileFormats = 'pdf'
 let g:Tex_CompileRule_pdf = 'pdflatex -interaction=nonstopmode $*'
 let g:Tex_GotoError = 0
-let g:Tex_ViewRule_pdf = 'evince'
-
-" NXC syntax highlighting
-au BufNewFile,BufRead *.nxc set filetype=nxc
-
-" To enable spell checking while typing, use ':set spell'
-set spelllang=de
-
-" Removes trailing spaces
-function TrimWhiteSpace()
-  %s/\s*$//
-  ''
-:endfunction
-
-" Uncomment the following to strip trailing whitespace automatically when
-" writing a buffer.
-
-" autocmd FileWritePre * :call TrimWhiteSpace()
-" autocmd FileAppendPre * :call TrimWhiteSpace()
-" autocmd FilterWritePre * :call TrimWhiteSpace()
-" autocmd BufWritePre * :call TrimWhiteSpace()
-
-map  <F2> :call TrimWhiteSpace()<CR>
-map! <F2> :call TrimWhiteSpace()<CR>
+let g:Tex_ViewRule_pdf = 'mupdf'
