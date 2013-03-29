@@ -32,16 +32,17 @@ SAVEHIST=1000
 autoload -U promptinit
 promptinit; prompt gentoo
 
-# Misc
+# Completion
 
-umask 002
-
-# The following lines were added by compinstall
 zstyle :compinstall filename '/home/jannis/.zshrc'
+zstyle ':completion:*' special-dirs true
 
 autoload -Uz compinit
 compinit
-# End of lines added by compinstall
+
+# Misc
+
+umask 002
 
 # Key Fixes (per Arch wiki)
 
