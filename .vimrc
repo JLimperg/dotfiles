@@ -1,3 +1,9 @@
+" Plugins
+execute pathogen#infect()
+
+filetype plugin indent on
+syntax on
+
 " Basic movement commands for German keyboard layout
 noremap                  ö l
 noremap                  l k
@@ -52,8 +58,6 @@ set nowrap
 set clipboard=unnamed
 
 " LaTeX
-filetype plugin on
-filetype indent on
 set shellslash
 set grepprg=grep\ -nH\ $*
 au BufEnter *.tex set autowrite
