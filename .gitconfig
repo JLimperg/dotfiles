@@ -1,3 +1,5 @@
 [user]
 	name = Jannis Limperg
 	email = jannis@limperg.de
+[push]
+	default = simple
