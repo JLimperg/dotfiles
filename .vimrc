@@ -6,6 +6,10 @@ syntax on
 
 let g:haddock_browser="/usr/bin/firefox"
 
+" Esc mapping for insert
+inoremap                 jk    <Esc>
+" inoremap                 <Esc> <nop>
+
 " Basic movement commands for German keyboard layout
 noremap                  ö l
 noremap                  l k
@@ -29,9 +33,6 @@ nnoremap                 Ö $
 
 nnoremap                 <Space> <C-F>
 
-" Esc mapping for insert
-inoremap                 kl    <Esc>
-inoremap                 <Esc> <nop>
 
 " Leader mappings
 :let mapleader = "h"
