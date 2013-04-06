@@ -4,6 +4,8 @@ execute pathogen#infect()
 filetype plugin indent on
 syntax on
 
+let g:haddock_browser="/usr/bin/firefox"
+
 " Basic movement commands for German keyboard layout
 noremap                  ö l
 noremap                  l k
