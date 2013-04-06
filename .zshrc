@@ -21,7 +21,7 @@ portage=/etc/portage
 
 setopt nobgnice nonotify nohup appendhistory incappendhistory histignoredups
 setopt noclobber hashlistall cdablevars autocd extendedglob nomatch autonamedirs
-bindkey -v
+bindkey -e
 
 HISTFILE=~/.histfile
 HISTSIZE=5000
