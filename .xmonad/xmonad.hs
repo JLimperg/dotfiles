@@ -21,7 +21,7 @@ import XMonad.Prompt.Shell
 import qualified XMonad.StackSet as W
 import qualified Data.Map        as M
 
-myTerminal      = "urxvtc"
+myTerminal      = "urxvtc -e tmux"
 
 myFocusFollowsMouse :: Bool
 myFocusFollowsMouse = False
