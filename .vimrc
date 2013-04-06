@@ -38,12 +38,17 @@ nnoremap                 Ö $
 
 nnoremap                 <Space> <C-F>
 
+" Various mappings
+
+nnoremap                 - <C-X>
+nnoremap                 + <C-A>
 
 " Leader mappings
 :let mapleader = "h"
 
 noremap  <silent>        <Leader>w :write<CR>
 noremap  <silent>        <Leader>q :write<CR>:quit<CR>
+noremap  <silent>        <Leader>Q :quit!<CR>
 
 noremap  <silent>        <Leader>h :new<CR>
 noremap  <silent>        <Leader>v :vnew<CR>
@@ -55,7 +60,6 @@ noremap <silent>         <Leader>sv :source ~/.vimrc<CR>
 
 noremap <silent>         <Leader>sh :nohlsearch<CR>
 noremap                  <Leader>su :s/\v
-noremap <silent>         <Leader>c  :call CommentLine()<CR>
 
 " Path
 set path=.,,**
