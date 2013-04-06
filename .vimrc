@@ -28,6 +28,11 @@ nnoremap                 <C-W><C-l> <C-W>k
 nnoremap                 <C-W><C-k> <C-W>j
 nnoremap                 <C-W><C-j> <C-W>h
 
+nnoremap                 <C-w>Ö     <C-w>L
+nnoremap                 <C-w>L     <C-w>K
+nnoremap                 <C-w>K     <C-w>J
+nnoremap                 <C-W>J     <C-W>H
+
 nnoremap                 J ^
 nnoremap                 Ö $
 
