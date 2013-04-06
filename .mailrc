@@ -47,4 +47,7 @@ define t {
   move @Trash
 }
 
-set NAIL_EXTRA_RC=/home/jannis/.mailrc-pws
+set NAIL_EXTRA_RC=~/.mailrc-pws
+
+source ~/.mail_aliases
+source ~/.mail_groups
