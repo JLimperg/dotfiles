@@ -3,8 +3,8 @@
 typeset -U path
 path=(~/bin/ ~/.cabal/bin $path)
 
-[[ -r .bash_aliases ]] && source ~/.bash_aliases
-[[ -r .zsh_aliases ]]  && source ~/.zsh_aliases
+[[ -r ~/.bash_aliases ]] && source ~/.bash_aliases
+[[ -r ~/.zsh_aliases  ]] && source ~/.zsh_aliases
 
 # CDPath
 
