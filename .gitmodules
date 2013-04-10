@@ -1,6 +1,6 @@
 [submodule ".vim/bundle/nerdcommenter"]
 	path = .vim/bundle/nerdcommenter
-	url = https://github.com/scrooloose/nerdcommenter.git
+	url = git://github.com/scrooloose/nerdcommenter.git
 [submodule ".vim/bundle/haskellmode"]
 	path = .vim/bundle/haskellmode
 	url = git://github.com/lukerandall/haskellmode-vim.git
@@ -9,4 +9,4 @@
 	url = git://github.com/tpope/vim-surround.git
 [submodule ".vim/bundle/align"]
 	path = .vim/bundle/align
-	url = git://github.com/vim-scripts/Align.git
+	url = git://github.com/JLimperg/Align.git
