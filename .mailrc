@@ -14,6 +14,7 @@ set record-resent
 set showlast
 set showname
 
+set autosort=date
 set imap-keepalive=300
 set newmail=nopoll
 
