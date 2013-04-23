@@ -10,3 +10,6 @@
 [submodule ".vim/bundle/align"]
 	path = .vim/bundle/align
 	url = git://github.com/JLimperg/Align.git
+[submodule ".vim/bundle/jcommenter"]
+	path = .vim/bundle/jcommenter
+	url = https://github.com/JLimperg/jcommenter.vim.git

@@ -39,9 +39,9 @@ nnoremap                 Ö $
 nnoremap                 <Space> <C-F>
 
 " Various mappings
-
-nnoremap                 - <C-X>
-nnoremap                 + <C-A>
+nnoremap                 -     <C-X>
+nnoremap                 +     <C-A>
+nnoremap                 <C-C> :call JCommentWriter()<CR>
 
 " Leader mappings
 :let mapleader = "h"
@@ -67,7 +67,6 @@ set path=.,,**
 " General Options
 set number
 set colorcolumn=80
-set textwidth=79
 set autoindent
 set shiftwidth=2
 set tabstop=2
