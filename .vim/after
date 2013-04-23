@@ -1,0 +1,3 @@
+if &textwidth == 0
+  setlocal textwidth=79
+endif
