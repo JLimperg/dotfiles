@@ -1,0 +1,21 @@
+*
+!*/
+!.git*
+
+# project files
+!*.qpf
+
+# project settings
+!*.qsf
+
+# pin assignments etc.
+!*.qdf
+
+# block diagrams
+!*.bdf
+
+# VHDL
+!*.vhd
+
+# test benches
+!*.vht
