@@ -4,12 +4,12 @@ use ieee.std_logic_arith.all;
 use ieee.std_logic_unsigned.all;
 
 entity calculator_core is port(
-  inc   : in  std_logic;
-  sel   : in  std_logic;
-  aOut  : out std_logic_vector(9 downto 0); -- operand A out
-  bOut  : out std_logic_vector(9 downto 0); -- operand B out
-  opOut : out std_logic_vector(1 downto 0); -- operation out. 00 = + | 01 = - | 10 = XOR | 11 = AND
-  resOut: out std_logic_vector(9 downto 0)  -- (A op B) out
+  inc    : in  std_logic;
+  sel    : in  std_logic;
+  aOut   : out std_logic_vector(9 downto 0); -- operand A out
+  bOut   : out std_logic_vector(9 downto 0); -- operand B out
+  opOut  : out std_logic_vector(1 downto 0); -- operation out. 00 = + | 01 = - | 10 = XOR | 11 = AND
+  resOut : out std_logic_vector(9 downto 0)  -- (A op B) out
 );
 end calculator_core;
 
@@ -30,10 +30,7 @@ begin
     end if;
   end process;
 
-  aOut <= ond1;
-  bOut <= ond2;
-
-  process(inc, state)
+  process (inc, state)
   begin
     if inc'EVENT and inc ='1' then   -- Depending on state either:
       if state = "00" then           -- Increment A
@@ -56,7 +53,9 @@ begin
     end if;
   end process;
 
-  opOut <= op;
+  opOut  <= op;
   resOut <= res;
+  aOut   <= ond1;
+  bOut   <= ond2;
 
 end behavioral;
