@@ -18,8 +18,8 @@ architecture behavioral of calculator_core is
   signal state : std_logic_vector(1 downto 0) := "00"; -- state 00 = operand A, 01 = operation, 10 = operand B, 11 = result
   signal ond1  : std_logic_vector(9 downto 0) := "0000000000";
   signal ond2  : std_logic_vector(9 downto 0) := "0000000000";
-  signal op    : std_logic_vector(1 downto 0);
-  signal res   : std_logic_vector(9 downto 0) := "0000000000";
+  signal op    : std_logic_vector(1 downto 0) := "00";
+  signal res   : std_logic_vector(9 downto 0);
 
 begin
 
@@ -39,16 +39,18 @@ begin
         op <= op + "1";
       elsif state = "10" then        -- Increment B
         ond2 <= ond2 + "1";
-      elsif state = "11" then        -- Calculate result
-        if op = "00" then
-          res <= ond1 + ond2;
-        elsif op = "01" then
-          res <= ond1 - ond2;
-        elsif op = "10" then
-          -- XOR
-        elsif op = "11" then
-          -- AND
-        end if;
+      end if;
+    end if;
+
+    if state = "11" then             -- Calculate result
+      if op = "00" then
+        res <= ond1 + ond2;
+      elsif op = "01" then
+        res <= ond1 - ond2;
+      elsif op = "10" then
+        res <= ond1 xor ond2;
+      elsif op = "11" then
+        res <= ond1 and ond2;
       end if;
     end if;
   end process;
