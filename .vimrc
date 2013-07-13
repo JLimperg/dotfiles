@@ -46,15 +46,16 @@ nnoremap                 <C-C> :call JCommentWriter()<CR>
 " Leader mappings
 :let mapleader = "h"
 
-noremap  <silent>        <Leader>w :write<CR>
-noremap  <silent>        <Leader>q :write<CR>:quit<CR>
-noremap  <silent>        <Leader>Q :quit!<CR>
+noremap  <silent>        <Leader>w  :write<CR>
+noremap  <silent>        <Leader>ww :write<CR>
+noremap  <silent>        <Leader>q  :write<CR>:quit<CR>
+noremap  <silent>        <Leader>Q  :quit!<CR>
 
-noremap  <silent>        <Leader>h :new<CR>
-noremap  <silent>        <Leader>v :vnew<CR>
-noremap                  <Leader>fi :find 
-noremap                  <Leader>fh :sfind 
-noremap                  <Leader>fv :vertical :sfind 
+noremap  <silent>        <Leader>h  :new<CR>
+noremap  <silent>        <Leader>v  :vnew<CR>
+noremap                  <Leader>fi :find
+noremap                  <Leader>fh :sfind
+noremap                  <Leader>fv :vertical :sfind
 
 noremap <silent>         <Leader>sv :source ~/.vimrc<CR>
 
