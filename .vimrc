@@ -15,8 +15,8 @@ noremap                  ö l
 noremap                  l k
 noremap                  k j
 noremap                  j h
-noremap                  t <C-]>
-noremap                  T <C-T>
+noremap                  _     <C-]>
+noremap                  <C-_> <C-t>
 
 nnoremap                 <C-w>ö     <C-w>l
 nnoremap                 <C-w>l     <C-w>k
