@@ -91,6 +91,9 @@ set shellslash
 set grepprg=grep\ -nH\ $*
 au BufEnter *.tex set autowrite
 
+" Custom LaTeX mappings
+let g:Tex_Env_eqnarray = "\\begin{eqnarray*}\<CR><++>\<CR>\\end{eqnarray*}"
+
 " Default output for latex is pdftex
 let g:Tex_DefaultTargetFormat = 'pdf'
 let g:Tex_MultipleCompileFormats = 'pdf'
