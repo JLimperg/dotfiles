@@ -9,12 +9,12 @@ path=(~/bin/ ~/.cabal/bin $path)
 # CDPath
 
 typeset -U cdpath
-cdpath=(. ~/prog ~/stud)
+cdpath=(. ~/prog ~/uni)
 
 # Named Directories
 
 prog=~/prog
-stud=~/stud
+uni=~/uni
 portage=/etc/portage
 
 # Options
