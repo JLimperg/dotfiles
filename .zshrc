@@ -44,6 +44,7 @@ compinit
 # Misc
 
 umask 002
+export VISUAL="/usr/bin/vi"
 
 # Key Fixes (per Arch wiki)
 
