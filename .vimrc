@@ -85,6 +85,10 @@ vnoremap l gk
 vnoremap k gj
 set nowrap
 
+" Ultisnip options
+let g:UltiSnipsExpandTrigger="<Tab>"
+let g:UltiSnipsJumpForwardTrigger="<Tab>"
+let g:UltiSnipsJumpBackwardTrigger="<S-Tab>"
 
 " LaTeX
 set shellslash
