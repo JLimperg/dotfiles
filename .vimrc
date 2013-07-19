@@ -8,6 +8,9 @@ let g:haddock_browser="/usr/bin/firefox"
 
 " Esc mapping for insert
 inoremap                 jk    <Esc>
+inoremap                 Jk    <Esc>
+inoremap                 jK    <Esc>
+inoremap                 JK    <Esc>
 " inoremap                 <Esc> <nop>
 
 " Basic movement commands for German keyboard layout
@@ -61,6 +64,8 @@ noremap <silent>         <Leader>sv :source ~/.vimrc<CR>
 
 noremap <silent>         <Leader>sh :nohlsearch<CR>
 noremap                  <Leader>su :s/\v
+
+noremap <silent>         <Leader>ut :silent !ctags -R<CR> :redraw!<CR>
 
 " Path
 set path=.,,**
