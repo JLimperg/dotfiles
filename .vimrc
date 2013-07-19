@@ -71,17 +71,20 @@ noremap <silent>         <Leader>ut :silent !ctags -R<CR> :redraw!<CR>
 set path=.,,**
 
 " General Options
-set number
-set colorcolumn=80
 set autoindent
-set shiftwidth=2
-set tabstop=2
+set autowrite
+set clipboard=unnamed
+set colorcolumn=80
 set expandtab
-set list listchars=tab:»·,trail:·
 set equalalways
 set hlsearch
+set list listchars=tab:»·,trail:·
+set shiftwidth=2
 set spelllang=de
-set clipboard=unnamed
+set tabstop=2
+
+setglobal relativenumber
+set       relativenumber
 
 " Line wrapping
 nnoremap l gk
