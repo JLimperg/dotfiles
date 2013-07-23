@@ -67,6 +67,9 @@ noremap                  <Leader>su :s/\v
 
 noremap <silent>         <Leader>ut :silent !ctags -R<CR> :redraw!<CR>
 
+" Unmappings / Masked mappings
+vnoremap K j
+
 " Path
 set path=.,,**
 
@@ -92,6 +95,9 @@ nnoremap k gj
 vnoremap l gk
 vnoremap k gj
 set nowrap
+
+" Color scheme
+highlight SpecialKey ctermfg=grey
 
 " Ultisnip options
 let g:UltiSnipsExpandTrigger="<Tab>"
