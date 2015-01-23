@@ -1,12 +1,3 @@
---
--- xmonad example config file.
---
--- A template showing all available configuration hooks,
--- and how to override the defaults in your own xmonad.hs conf file.
---
--- Normally, you'd only override those defaults you care about.
---
-
 import Data.Monoid
 import System.Exit
 
@@ -24,7 +15,6 @@ import qualified Data.Map        as M
 myTerminal    = "urxvtc -e tmux"
 mySrvTerminal = "urxvtc -e server"
 
-myFocusFollowsMouse :: Bool
 myFocusFollowsMouse = False
 
 myBorderWidth   = 2 -- px
@@ -51,9 +41,6 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 
     -- launch dmenu
     , ((modm,               xK_r     ), spawn "dmenu_run")
-
-    -- launch Windows vm
-    , ((modm,               xK_w     ), spawn "win")
 
     -- launch gmrun
     --, ((modm .|. shiftMask, xK_p     ), spawn "gmrun")
