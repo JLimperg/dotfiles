@@ -1,9 +1,6 @@
 [submodule ".vim/bundle/nerdcommenter"]
 	path = .vim/bundle/nerdcommenter
 	url = git://github.com/scrooloose/nerdcommenter.git
-[submodule ".vim/bundle/haskellmode"]
-	path = .vim/bundle/haskellmode
-	url = git://github.com/lukerandall/haskellmode-vim.git
 [submodule ".vim/bundle/surround"]
 	path = .vim/bundle/surround
 	url = git://github.com/tpope/vim-surround.git
@@ -16,3 +13,12 @@
 [submodule ".vim/bundle/ultisnips"]
 	path = .vim/bundle/ultisnips
 	url = https://github.com/SirVer/ultisnips
+[submodule ".vim/bundle/idris-vim"]
+	path = .vim/bundle/idris-vim
+	url = https://github.com/idris-hackers/idris-vim.git
+[submodule ".vim/bundle/coquille"]
+	path = .vim/bundle/coquille
+	url = https://github.com/the-lambda-church/coquille
+[submodule ".vim/bundle/vimbufsync"]
+	path = .vim/bundle/vimbufsync
+	url = https://github.com/def-lkb/vimbufsync.git
