@@ -19,29 +19,27 @@ set imap-keepalive=300
 set newmail=nopoll
 
 set folder=mail
-
 set pipe-text/html="lynx -dump -force_html -stdin"
+
+set record=@Sent
 
 account p {
   set from="Jannis Limperg <jannis@limperg.de>"
   set ssl-verify=warn
-  shortcut imap imaps://jannis@limperg.de
-  fi imaps://jannis@limperg.de/
-  set record=@Sent
+  shortcut imap imaps://jannis@limperg.de@limperg.de
+  fi imap
 }
 
 account ls {
   set from="Jannis Limperg <Jannis.Limperg@mars.uni-freiburg.de>"
   shortcut imap imaps://hiwisrphil@jura.uni-freiburg.de
-  fi imaps://hiwisrphil@jura.uni-freiburg.de/
-  set record=@Sent
+  fi imap
 }
 
 account u {
   set from="Jannis Limperg <Jannis.Limperg@mars.uni-freiburg.de>"
   shortcut imap imaps://Jannis.Limperg@mars.uni-freiburg.de
-  fi imaps://Jannis.Limperg@mars.uni-freiburg.de/
-  set record=@Sent
+  fi imap
 }
 
 define t {
