@@ -85,6 +85,7 @@ vnoremap K j
 
 " Path
 set path=.,,**
+set suffixes+=.hi,.o,.dyn_hi,.dyn_o
 
 " General Options
 set autoindent
