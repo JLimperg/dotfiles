@@ -196,8 +196,8 @@ myLayout = tiled ||| Mirror tiled ||| Full
 --
 myManageHook = composeAll
     [ isFullscreen --> doFullFloat
-    , className =? "MPlayer"        --> doFloat
-    , className =? "Gimp"           --> doFloat
+    --, className =? "MPlayer"        --> doFloat
+    --, className =? "Gimp"           --> doFloat
     , resource  =? "desktop_window" --> doIgnore
     , resource  =? "kdesktop"       --> doIgnore
     ]
