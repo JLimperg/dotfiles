@@ -96,6 +96,7 @@ set expandtab
 set equalalways
 set hlsearch
 set list listchars=tab:»·,trail:·
+set nojoinspaces
 set shiftwidth=2
 set spelllang=de
 set tabstop=2
