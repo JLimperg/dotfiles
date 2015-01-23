@@ -42,6 +42,20 @@ account u {
   fi imap
 }
 
+account dc {
+  set from="Debattierclub Freiburg <vorstand@debattierclub-freiburg.de>"
+  set ssl-verify=warn
+  shortcut imap imaps://vorstand@debattierclub-freiburg.de@debattierclub-freiburg.de/
+  fi imap
+}
+
+account swc {
+  set from="Debattierclub Freiburg <swc@debattierclub-freiburg.de>"
+  set ssl-verify=warn
+  shortcut imap imaps://swc@debattierclub-freiburg.de@debattierclub-freiburg.de/
+  fi imap
+}
+
 define t {
   move @Trash
 }
