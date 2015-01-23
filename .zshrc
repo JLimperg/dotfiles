@@ -1,7 +1,7 @@
 # Path, Aliases
 
 typeset -U path
-path=(~/bin/ ~/.cabal/bin $path)
+path=(~/bin ~/.cabal/bin /u01/app/oracle/product/11.2.0/xe/bin $path)
 
 [[ -r ~/.bash_aliases ]] && source ~/.bash_aliases
 [[ -r ~/.zsh_aliases  ]] && source ~/.zsh_aliases
@@ -45,6 +45,9 @@ compinit
 
 umask 002
 export VISUAL="/usr/bin/vi"
+export EDITOR="/usr/bin/vi"
+export ORACLE_HOME="/u01/app/oracle/product/11.2.0/xe"
+export ORACLE_SID="XE"
 
 # Key Fixes (per Arch wiki)
 
