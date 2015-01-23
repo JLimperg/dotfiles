@@ -48,6 +48,14 @@ define t {
   move @Trash
 }
 
+define att {
+  write /dev/null
+}
+
+define gpg {
+  pipe . "gpg -d"
+}
+
 set NAIL_EXTRA_RC=~/.mailrc-pws
 
 source ~/.mail_aliases
