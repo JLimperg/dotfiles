@@ -1,0 +1,198 @@
+let mapleader = "s"
+
+mapclear
+
+noremap x     s
+noremap X     S
+noremap v     x
+noremap V     X
+noremap l     R
+noremap L     gR
+noremap c     o
+noremap C     O
+noremap w     u
+noremap W     <C-r>
+noremap <C-w> U
+noremap K     ZZ
+noremap h     b
+noremap H     B
+noremap g     ge
+noremap g     gE
+noremap f     e
+noremap F     E
+noremap q     w
+noremap Q     W
+noremap ß     q
+noremap ẞ     @
+noremap u     c
+noremap U     C
+noremap i     d
+noremap I     r
+noremap ii    dd
+noremap a     a
+noremap A     A
+noremap e     i
+noremap E     I
+noremap o     .
+noremap s     <Leader>
+noremap S     g0
+noremap n     h
+noremap N     g^
+noremap <C-n> gm
+noremap r     gj
+noremap R     G
+noremap <C-r> L
+noremap t     gk
+noremap T     gg
+noremap <C-t> H
+noremap d     l
+noremap D     g$
+noremap <C-d> M
+noremap y     n
+noremap Y     N
+noremap ü     v
+noremap Ü     V
+noremap <C-ü> <C-v>
+noremap ö     <
+noremap öö    <<
+noremap Ö     >
+noremap ÖÖ    >>
+noremap ä     p
+noremap Ä     P
+noremap p     y
+noremap P     J
+noremap pp    yy
+noremap b     f
+noremap B     F
+noremap m     t
+noremap M     T
+noremap ,     ;
+noremap .     m
+noremap •     '
+noremap <C-.> `
+
+onoremap u     V
+onoremap U     <C-v>
+onoremap i     v
+onoremap aS    aW
+onoremap an    aw
+onoremap ar    a)
+onoremap at    a]
+onoremap ad    a}
+onoremap ay    a>
+onoremap am    as
+onoremap a,    ap
+onoremap a.    at
+onoremap eS    iW
+onoremap en    iw
+onoremap er    i)
+onoremap et    i]
+onoremap ed    i}
+onoremap ey    i>
+onoremap em    is
+onoremap e,    ip
+onoremap e.    it
+
+vnoremap aS    aW
+vnoremap an    aw
+vnoremap ar    a)
+vnoremap at    a]
+vnoremap ad    a}
+vnoremap ay    a>
+vnoremap am    as
+vnoremap a,    ap
+vnoremap a.    at
+vnoremap eS    iW
+vnoremap en    iw
+vnoremap er    i)
+vnoremap et    i]
+vnoremap ed    i}
+vnoremap ey    i>
+vnoremap em    is
+vnoremap e,    ip
+vnoremap e.    it
+
+nnoremap          zx    <C-w>_
+nnoremap          zX    <C-w>|
+nnoremap          zv    <C-w>-
+nnoremap          zV    <C-w><
+nnoremap          zl    <C-w>+
+nnoremap          zL    <C-w>>
+nnoremap          zc    <C-w>=
+nnoremap          zw    <C-w>x
+nnoremap          zk    <C-w>o
+nnoremap          zh    <C-w>n
+nnoremap <silent> zg    :vnew<CR>
+nnoremap          zu    <C-w>H
+nnoremap          zi    <C-w>J
+nnoremap          za    <C-w>K
+nnoremap          ze    <C-w>L
+nnoremap          zo    <C-w>r
+nnoremap          zO    <C-w>R
+nnoremap          zs    <C-w>p
+nnoremap          zS    <C-w>P
+nnoremap          zn    <C-w>h
+nnoremap          zN    <C-w>t
+nnoremap          zr    <C-w>j
+nnoremap          zt    <C-w>k
+nnoremap          zd    <C-w>l
+nnoremap          zD    <C-w>b
+nnoremap          zb    <C-w>z
+
+" TODO :tabmove +N/-N
+nnoremap <silent> Zk    :tabonly<CR>
+nnoremap <silent> Zh    :tabedit<CR>
+nnoremap <silent> Zs    :tabclose<CR>
+nnoremap          Zn    gT
+nnoremap <silent> ZN    :tabfirst<CR>
+nnoremap <silent> Pr    :tabmove<CR>
+nnoremap <silent> Zt    :tabmove<CR>
+nnoremap <silent> ZT    :tabmove<CR>
+nnoremap <silent> Zd    gt
+nnoremap <silent> ZD    :tablast<CR>
+
+nnoremap          Oh    zH
+nnoremap          Og    <C-d>
+nnoremap          Of    <C-u>
+nnoremap          Oq    zL
+nnoremap          On    zh
+nnoremap          Or    <C-e>
+nnoremap          Ot    <C-y>
+nnoremap          Od    zl
+nnoremap          Om    zs
+nnoremap          O,    <C-f>
+nnoremap          O.    <C-b>
+nnoremap          Oj    ze
+
+nnoremap          jv    zE
+nnoremap          jl    zd
+nnoremap          jL    zD
+nnoremap          jc    zf
+nnoremap          jC    zF
+nnoremap          ju    zk
+nnoremap          ji    zi
+nnoremap          ja    za
+nnoremap          jA    zA
+nnoremap          je    zj
+nnoremap          jo    zx
+nnoremap          jO    zX
+nnoremap          jä    zm
+nnoremap          jÄ    zM
+nnoremap          jp    zr
+nnoremap          jP    zR
+
+nnoremap          kv    zW
+nnoremap          kV    zuW
+nnoremap          kl    zG
+nnoremap          kL    zuW
+nnoremap          ku    ]s
+nnoremap          kU    ]S
+nnoremap          ka    zw
+nnoremap          kA    zuw
+nnoremap          ka    zg
+nnoremap          kA    zug
+nnoremap          ke    [s
+nnoremap          kE    [S
+nnoremap          ko    z=
+
+" vim: ft=vim
