@@ -10,7 +10,9 @@
 !.tmux.conf
 !.vim/
 !.vimrc
+!.vimkeymap
 !.Xdefaults
+!.xinitrc
 !.xmonad/
 !.zlogin
 !.zsh_aliases

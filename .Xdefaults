@@ -1,6 +1,6 @@
 URxvt.font:              xft:DejaVu Sans Mono:pixelsize=15
-URxvt.background:        #EEEEEE
-URxvt.foreground:        #000000
+URxvt.background:        black
+URxvt.foreground:        white
 URxvt.saveLines:         10000
 URxvt.scrollBar:         false
 URxvt.secondaryScroll:   true
