@@ -1,7 +1,7 @@
+alias mpva="mpv --no-video"
 alias beb="bundle exec bash"
 alias cal="cal -m"
 alias dox="xinit &>> ~/.xinit.log &"
-alias emerge-update="sudo emerge --update --with-bdeps=y --newuse --deep world && sudo emerge --depclean && sudo revdep-rebuild"
 alias pdflatex="pdflatex -interaction nonstopmode"
 #alias time="time -p"
 alias xclip="xclip -selection c"
