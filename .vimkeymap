@@ -35,8 +35,8 @@ noremap E     I
 noremap o     .
 noremap S     g0
 noremap n     h
-noremap N     g^
-noremap <C-n> gm
+noremap N     ^
+noremap <C-n> g^
 noremap r     gj
 noremap R     G
 noremap <C-r> L
@@ -44,8 +44,8 @@ noremap t     gk
 noremap T     gg
 noremap <C-t> H
 noremap d     l
-noremap D     g$
-noremap <C-d> M
+noremap D     $
+noremap <C-d> g$
 noremap y     n
 noremap Y     N
 noremap <C-y> gq
