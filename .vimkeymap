@@ -28,13 +28,11 @@ noremap u     c
 noremap U     C
 noremap i     d
 noremap I     r
-noremap ii    dd
 noremap a     a
 noremap A     A
 noremap e     i
 noremap E     I
 noremap o     .
-noremap s     <Leader>
 noremap S     g0
 noremap n     h
 noremap N     g^
@@ -50,18 +48,16 @@ noremap D     g$
 noremap <C-d> M
 noremap y     n
 noremap Y     N
+noremap <C-y> gq
 noremap ü     v
 noremap Ü     V
 noremap <C-ü> <C-v>
 noremap ö     <
-noremap öö    <<
 noremap Ö     >
-noremap ÖÖ    >>
 noremap ä     p
 noremap Ä     P
 noremap p     y
 noremap P     J
-noremap pp    yy
 noremap b     f
 noremap B     F
 noremap m     t
@@ -70,6 +66,12 @@ noremap ,     ;
 noremap .     m
 noremap •     '
 noremap <C-.> `
+
+nnoremap ii         dd
+nnoremap pp         yy
+nnoremap <C-y><C-y> gqgq
+nnoremap öö         <<
+nnoremap ÖÖ         >>
 
 onoremap u     V
 onoremap U     <C-v>
