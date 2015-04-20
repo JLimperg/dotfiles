@@ -17,3 +17,9 @@
 !.zlogin
 !.zsh_aliases
 !.zshrc
+
+!.config
+.config/*
+!.config/fish
+.config/fish/*
+!.config/fish/config.fish
