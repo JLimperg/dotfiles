@@ -1,6 +1,9 @@
 set -e fish_greeting
 
-set PATH ~/bin $PATH
+set -gx PATH ~/bin $PATH
+set -gx EDITOR vim
+set -gx VISUAL vim
+set -gx PAGER less
 
 # Aliases
 
@@ -21,20 +24,20 @@ end
 
 # Nix
 
-set SSL_CERT_FILE /etc/ssl/certs/ca-certificates.crt
-set NIX_LINK "$HOME/.nix-profile"
-set PATH     "$NIX_LINK/bin" "$NIX_LINK/sbin" $PATH
-set NIX_PATH "$NIX_PATH:nixpkgs=$HOME/.nix-defexpr/nixpkgs"
-set NIX_USER_PROFILE_DIR "$PROFILE_PREFIX/per-user/$USER"
-set NIX_PROFILES /var/lib/nix/profiles/default "$HOME/.nix-profile"
-set NIX_USER_GCROOTS_DIR /var/lib/nix/gcroots/per-user/$USER
+set -gx SSL_CERT_FILE /etc/ssl/certs/ca-certificates.crt
+set -gx NIX_LINK "$HOME/.nix-profile"
+set -gx PATH     "$NIX_LINK/bin" "$NIX_LINK/sbin" $PATH
+set -gx NIX_PATH "$NIX_PATH:nixpkgs=$HOME/.nix-defexpr/nixpkgs"
+set -gx NIX_USER_PROFILE_DIR "$PROFILE_PREFIX/per-user/$USER"
+set -gx NIX_PROFILES /var/lib/nix/profiles/default "$HOME/.nix-profile"
+set -gx NIX_USER_GCROOTS_DIR /var/lib/nix/gcroots/per-user/$USER
 
 if test $USER -eq root
   set -e NIX_REMOTE
 else
-  set NIX_REMOTE daemon
+  set -gx NIX_REMOTE daemon
 end
 
 for p in $NIX_PROFILES
-  set PATH $p/bin $PATH
+  set -gx PATH $p/bin $PATH
 end
