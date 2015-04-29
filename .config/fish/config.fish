@@ -4,6 +4,7 @@ set -gx PATH ~/bin $PATH
 set -gx EDITOR vim
 set -gx VISUAL vim
 set -gx PAGER less
+set -gx MANPAGER 'less -isR'
 
 # Aliases
 
