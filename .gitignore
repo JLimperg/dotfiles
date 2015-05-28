@@ -7,6 +7,10 @@
 !.irssi/
 !.mailrc
 !.msmtprc
+!.nixpkgs/
+!.nixpkgs/*
+!.nixpkgs/local/
+!.nixpkgs/local/*
 !.tmux.conf
 !.vim/
 !.vimrc
