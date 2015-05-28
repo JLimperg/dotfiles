@@ -15,7 +15,7 @@ import qualified Data.Map        as M
 myTerminal    = "urxvtc -e tmux"
 mySrvTerminal = "urxvtc -e server"
 
-myFocusFollowsMouse = False
+myFocusFollowsMouse = True
 
 myBorderWidth   = 2 -- px
 
