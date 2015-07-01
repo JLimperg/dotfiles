@@ -12,8 +12,8 @@ import XMonad.Prompt.Shell
 import qualified XMonad.StackSet as W
 import qualified Data.Map        as M
 
-myTerminal    = "urxvtc -e tmux"
-mySrvTerminal = "urxvtc -e server"
+myTerminal        = "urxvtc -e tmux"
+myNonTmuxTerminal = "urxvtc -e fish"
 
 myFocusFollowsMouse = True
 
@@ -37,7 +37,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     -- launch a terminal
     [ ((modm,               xK_Return), spawn $ XMonad.terminal conf)
 
-    , ((modm,               xK_s     ), spawn $ mySrvTerminal)
+    , ((modm,               xK_s     ), spawn $ myNonTmuxTerminal)
 
     -- launch dmenu
     , ((modm,               xK_r     ), spawn "dmenu_run")
