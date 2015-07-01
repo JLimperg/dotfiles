@@ -14,12 +14,8 @@ inoremap                 nr    <Esc>
 noremap                  _     <C-]>
 noremap                  <C-_> <C-t>
 
-nnoremap                 <Space> <C-F>
-
 noremap  <silent>        <Leader>w  :write<CR>
-noremap  <silent>        <Leader>ww :write<CR>
-noremap  <silent>        <Leader>q  :write<CR>:quit<CR>
-noremap  <silent>        <Leader>Q  :quit!<CR>
+noremap  <silent>        <Leader>q  :quit!<CR>
 
 noremap                  <Leader>fi :find
 noremap                  <Leader>fh :sfind

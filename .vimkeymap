@@ -1,4 +1,4 @@
-let mapleader = "s"
+let mapleader = "\<Space>"
 
 mapclear
 
@@ -17,7 +17,7 @@ noremap K     ZZ
 noremap h     b
 noremap H     B
 noremap g     ge
-noremap g     gE
+noremap G     gE
 noremap f     e
 noremap F     E
 noremap q     w
