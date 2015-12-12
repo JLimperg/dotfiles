@@ -1,7 +1,7 @@
-nnoremap <silent>        <Leader><Leader>ü :CoqLaunch<CR>
-nnoremap <silent>        <Leader><Leader>ö :CoqKill<CR>
-nnoremap <silent>        <Leader><Leader>e :CoqToCursor<CR>
-nnoremap <silent>        <Leader><Leader>a :CoqNext<CR>
-nnoremap <silent>        <Leader><Leader>i :CoqUndo<CR>
-nnoremap                 <Leader><Leader>c :Coq Eval compute in (
-nnoremap                 <Leader><Leader>l :Coq SearchAbout
+nnoremap <silent>        <Leader><Leader>w :CoqLaunch<CR>
+nnoremap <silent>        <Leader><Leader>k :CoqKill<CR>
+nnoremap <silent>        <Leader><Leader>n :CoqToCursor<CR>
+nnoremap <silent>        <Leader><Leader>r :CoqNext<CR>
+nnoremap <silent>        <Leader><Leader>t :CoqUndo<CR>
+nnoremap                 <Leader><Leader>a :Coq Eval compute in (
+nnoremap                 <Leader><Leader>e :Coq SearchAbout
