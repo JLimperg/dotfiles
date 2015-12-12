@@ -28,3 +28,6 @@
 [submodule ".vim/bundle/ghcmod-vim"]
 	path = .vim/bundle/ghcmod-vim
 	url = https://github.com/eagletmt/ghcmod-vim.git
+[submodule ".vim/bundle/neocomplete.vim"]
+	path = .vim/bundle/neocomplete.vim
+	url = https://github.com/Shougo/neocomplete.vim.git

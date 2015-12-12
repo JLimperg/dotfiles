@@ -59,7 +59,13 @@ set nowrap
 " Color scheme
 highlight SpecialKey ctermfg=grey
 
-" Ultisnip options
+" Completion
 let g:UltiSnipsExpandTrigger="<Tab>"
 let g:UltiSnipsJumpForwardTrigger="<Tab>"
 let g:UltiSnipsJumpBackwardTrigger="<S-Tab>"
+" UltiSnips integrates with neocompletion, so <Tab> now doubles
+" as the omnicompletion key.
+
+let g:neocomplete#enable_at_startup = 1
+let g:neocomplete#enable_smart_case = 1
+let g:neocomplete#sources#syntax#min_keyword_length = 3
