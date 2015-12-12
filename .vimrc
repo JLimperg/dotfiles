@@ -32,7 +32,7 @@ imap <C-ö> <Plug>MarkersJumpB
 
 " Path
 set path=.,,**
-set suffixes+=.hi,.o,.dyn_hi,.dyn_o
+set suffixes+=.hi,.o,.dyn_hi,.dyn_o,.glob,.vo,.vi,.d
 
 " General Options
 set autoindent
