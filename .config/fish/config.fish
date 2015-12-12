@@ -1,6 +1,7 @@
 if status --is-login
   set -e fish_greeting
   set -x PATH ~/bin ~/.local/bin $PATH
+  set -x EDITOR vim
 end
 
 # Aliases
