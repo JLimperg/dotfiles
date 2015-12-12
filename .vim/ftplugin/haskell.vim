@@ -1,5 +1,7 @@
 setlocal omnifunc=necoghc#omnifunc
 
+noremap <silent>         <Leader>ut :silent !hasktags .<CR> :redraw!<CR>
+
 noremap <silent> <Leader><Leader>t :GhcModType<CR>
 noremap <silent> <Leader><Leader>e :GhcModExpand<CR>
 
