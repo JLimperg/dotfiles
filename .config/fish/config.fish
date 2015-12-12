@@ -6,7 +6,7 @@ end
 
 # Aliases
 
-alias mpva 'mpv --no-video'
+alias mpv 'mpv --no-audio-display'
 alias cal 'cal -m'
 alias pdflatex 'pdflatex -interaction nonstopmode'
 alias xclip 'xclip -selection c'
