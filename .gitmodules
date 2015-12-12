@@ -16,3 +16,15 @@
 [submodule ".vim/bundle/vim-racket"]
 	path = .vim/bundle/vim-racket
 	url = https://github.com/wlangstroth/vim-racket.git
+[submodule ".vim/bundle/coquille"]
+	path = .vim/bundle/coquille
+	url = https://github.com/JLimperg/coquille.git
+[submodule ".vim/bundle/haskell-vim"]
+	path = .vim/bundle/haskell-vim
+	url = https://github.com/neovimhaskell/haskell-vim.git
+[submodule ".vim/bundle/neco-ghc"]
+	path = .vim/bundle/neco-ghc
+	url = https://github.com/eagletmt/neco-ghc.git
+[submodule ".vim/bundle/ghcmod-vim"]
+	path = .vim/bundle/ghcmod-vim
+	url = https://github.com/eagletmt/ghcmod-vim.git
