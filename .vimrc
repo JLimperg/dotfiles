@@ -6,8 +6,6 @@ execute pathogen#infect()
 filetype plugin indent on
 syntax on
 
-let g:haddock_browser="/usr/bin/firefox"
-
 " Esc mapping for insert
 inoremap                 nr    <Esc>
 
