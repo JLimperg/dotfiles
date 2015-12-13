@@ -1,4 +1,5 @@
 setlocal omnifunc=necoghc#omnifunc
+autocmd BufWritePost *.hs GhcModCheckAndLintAsync
 
 noremap <silent>         <Leader>ut :silent !hasktags .<CR> :redraw!<CR>
 
