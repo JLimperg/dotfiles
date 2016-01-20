@@ -6,6 +6,8 @@
 !.gitignore
 !.irssi/
 !.mailrc
+!.mpv/
+!.mpv/config
 !.msmtprc
 !.nixpkgs/
 !.nixpkgs/*
