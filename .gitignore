@@ -13,6 +13,7 @@
 !.nixpkgs/*
 !.nixpkgs/local/
 !.nixpkgs/local/*
+!.spacemacs
 !.tmux.conf
 !.vim/
 !.vimrc
