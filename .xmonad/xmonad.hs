@@ -5,6 +5,7 @@ import XMonad
 import XMonad.Actions.SpawnOn
 import XMonad.Hooks.ManageHelpers
 import XMonad.Layout.NoBorders
+import XMonad.Layout.IndependentScreens
 import XMonad.ManageHook
 import XMonad.Prompt
 import XMonad.Prompt.Shell
@@ -21,7 +22,7 @@ myBorderWidth   = 2 -- px
 
 myModMask       = mod4Mask
 
-myWorkspaces    = map show [1..9]
+myWorkspaces    = withScreens 2 $ map show [1..9]
 
 myNormalBorderColor  = "#dddddd"
 myFocusedBorderColor = "#ff0000"
@@ -32,21 +33,18 @@ myFocusedBorderColor = "#ff0000"
 ------------------------------------------------------------------------
 -- Key bindings
 --
-myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
+myKeys conf@XConfig {XMonad.modMask = modm} = M.fromList $
 
     -- launch a terminal
-    [ ((modm,               xK_Return), spawn $ XMonad.terminal conf)
+    [ ((modm              , xK_n     ), spawn (XMonad.terminal conf))
 
-    , ((modm,               xK_s     ), spawn $ myNonTmuxTerminal)
+    , ((modm .|. shiftMask, xK_s     ), spawn myNonTmuxTerminal)
 
     -- launch dmenu
-    , ((modm,               xK_r     ), spawn "dmenu_run")
-
-    -- launch gmrun
-    --, ((modm .|. shiftMask, xK_p     ), spawn "gmrun")
+    , ((modm              , xK_d     ), spawn "dmenu_run")
 
     -- close focused window
-    , ((modm .|. shiftMask, xK_c     ), kill)
+    , ((modm              , xK_s     ), kill)
 
      -- Rotate through the available layout algorithms
     , ((modm,               xK_space ), sendMessage NextLayout)
@@ -55,37 +53,37 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm .|. shiftMask, xK_space ), setLayout $ XMonad.layoutHook conf)
 
     -- Resize viewed windows to the correct size
-    , ((modm,               xK_n     ), refresh)
+    , ((modm,               xK_m     ), refresh)
 
     -- Move focus to the next window
     , ((modm,               xK_Tab   ), windows W.focusDown)
 
     -- Move focus to the next window
-    , ((modm,               xK_l     ), windows W.focusDown)
+    , ((modm,               xK_r     ), windows W.focusDown)
 
     -- Move focus to the previous window
-    , ((modm,               xK_k     ), windows W.focusUp  )
+    , ((modm,               xK_t     ), windows W.focusUp  )
 
     -- Move focus to the master window
-    , ((modm,               xK_m     ), windows W.focusMaster  )
+    -- , ((modm,               xK_m     ), windows W.focusMaster  )
 
     -- Swap the focused window and the master window
     , ((modm .|. shiftMask, xK_Return), windows W.swapMaster)
 
     -- Swap the focused window with the next window
-    , ((modm .|. shiftMask, xK_l     ), windows W.swapDown  )
+    , ((modm .|. shiftMask, xK_t     ), windows W.swapDown  )
 
     -- Swap the focused window with the previous window
-    , ((modm .|. shiftMask, xK_k     ), windows W.swapUp    )
+    , ((modm .|. shiftMask, xK_r     ), windows W.swapUp    )
 
     -- Shrink the master area
-    , ((modm,               xK_j     ), sendMessage Shrink)
+    , ((modm,               xK_g     ), sendMessage Shrink)
 
     -- Expand the master area
-    , ((modm,           xK_odiaeresis), sendMessage Expand)
+    , ((modm,               xK_f     ), sendMessage Expand)
 
     -- Push window back into tiling
-    , ((modm,               xK_t     ), withFocused $ windows . W.sink)
+    , ((modm,               xK_b     ), withFocused $ windows . W.sink)
 
     -- Increment the number of windows in the master area
     , ((modm              , xK_comma ), sendMessage (IncMasterN 1))
@@ -100,46 +98,42 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     -- , ((modm              , xK_b     ), sendMessage ToggleStruts)
 
     -- Quit xmonad
-    , ((modm .|. shiftMask, xK_q     ), io (exitWith ExitSuccess))
+    , ((modm .|. shiftMask, xK_y     ), io exitSuccess)
 
     -- Restart xmonad
-    , ((modm              , xK_q     ), spawn "xmonad --recompile; xmonad --restart")
+    -- , ((modm .|. shiftMask, xK_y     ), spawn "xmonad --recompile; xmonad --restart")
     ]
 
-    --
-    -- mod-[1..9], Switch to workspace N
-    -- mod-shift-[1..9], Move client to workspace N
-    --
+    -- mod-{1-9}: switch to workspace 1-9 on current screen
+    -- mod-shift-{1-9}: move client to workspace 1-9 on current screen
     ++
-    [((m .|. modm, k), windows $ f i)
-        | (i, k) <- zip (XMonad.workspaces conf) [xK_1 .. xK_9]
+    [((m .|. modm, k), windows $ onCurrentScreen f i)
+        | (i, k) <- zip (workspaces' conf) [xK_1 .. xK_9]
         , (f, m) <- [(W.greedyView, 0), (W.shift, shiftMask)]]
 
-    --
     -- mod-{w,e,r}, Switch to physical/Xinerama screens 1, 2, or 3
     -- mod-shift-{w,e,r}, Move client to screen 1, 2, or 3
-    --
     ++
     [((m .|. modm, key), screenWorkspace sc >>= flip whenJust (windows . f))
-        | (key, sc) <- zip [xK_w, xK_e] [0..]
+        | (key, sc) <- zip [xK_q, xK_h] [0..]
         , (f, m) <- [(W.view, 0), (W.shift, shiftMask)]]
 
 
 ------------------------------------------------------------------------
 -- Mouse bindings
 --
-myMouseBindings (XConfig {XMonad.modMask = modm}) = M.fromList $
+myMouseBindings XConfig {XMonad.modMask = modm} = M.fromList
 
     -- mod-button1, Set the window to floating mode and move by dragging
-    [ ((modm, button1), (\w -> focus w >> mouseMoveWindow w
-                                       >> windows W.shiftMaster))
+    [ ((modm, button1), \w -> focus w >> mouseMoveWindow w
+                                      >> windows W.shiftMaster)
 
     -- mod-button2, Raise the window to the top of the stack
-    , ((modm, button2), (\w -> focus w >> windows W.shiftMaster))
+    , ((modm, button2), \w -> focus w >> windows W.shiftMaster)
 
     -- mod-button3, Set the window to floating mode and resize by dragging
-    , ((modm, button3), (\w -> focus w >> mouseResizeWindow w
-                                       >> windows W.shiftMaster))
+    , ((modm, button3), \w -> focus w >> mouseResizeWindow w
+                                      >> windows W.shiftMaster)
 
     -- you may also bind events to the mouse scroll wheel (button4 and button5)
     ]
@@ -231,7 +225,7 @@ main = xmonad defaults
 --
 -- No need to modify this.
 --
-defaults = defaultConfig {
+defaults = def {
       -- simple stuff
         terminal           = myTerminal,
         focusFollowsMouse  = myFocusFollowsMouse,
