@@ -14,7 +14,7 @@ import qualified XMonad.StackSet as W
 import qualified Data.Map        as M
 
 myTerminal        = "urxvtc -e tmux"
-myNonTmuxTerminal = "urxvtc -e fish"
+myNonTmuxTerminal = "urxvtc -e bash"
 
 myFocusFollowsMouse = True
 

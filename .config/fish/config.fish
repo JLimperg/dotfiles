@@ -1,8 +1,4 @@
-if status --is-login
-  set -e fish_greeting
-  set -x PATH ~/bin ~/.local/bin $PATH
-  set -x EDITOR vim
-end
+set fish_greeting
 
 # Aliases
 
@@ -18,8 +14,4 @@ alias vgaoff "xrandr --output VGA1 --off"
 
 function dox
   xinit $argv > ~/.xinit.log 2>&1 &
-end
-
-if type -qP opam
-  eval (opam config env)
 end

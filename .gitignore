@@ -1,6 +1,7 @@
 *
 .*
 !.bash_aliases
+!.bash_profile
 !.bashrc
 !.gitconfig
 !.gitignore
@@ -13,6 +14,7 @@
 !.nixpkgs/*
 !.nixpkgs/local/
 !.nixpkgs/local/*
+!.profile
 !.spacemacs
 !.tmux.conf
 !.vim/
