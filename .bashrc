@@ -6,8 +6,6 @@ fi
 shopt -s extglob
 umask 002
 
-source ~/.bash_aliases
-
 eval `opam config env`
 
 # Use fish as the shell
