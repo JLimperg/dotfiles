@@ -3,6 +3,7 @@
 !.bash_aliases
 !.bash_profile
 !.bashrc
+!.emacs.d
 !.gitconfig
 !.gitignore
 !.irssi/
