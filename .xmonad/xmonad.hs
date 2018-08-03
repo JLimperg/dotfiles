@@ -1,4 +1,7 @@
+{-# LANGUAGE PartialTypeSignatures #-}
+
 import Data.Monoid
+import Data.Word (Word32)
 import System.Exit
 
 import XMonad
@@ -6,24 +9,31 @@ import XMonad.Hooks.EwmhDesktops
 import XMonad.Hooks.ManageHelpers
 import XMonad.Layout.NoBorders
 import XMonad.Layout.IndependentScreens
-import XMonad.ManageHook
 import XMonad.Prompt
 import XMonad.Prompt.Shell
 
 import qualified XMonad.StackSet as W
 import qualified Data.Map        as M
 
+myTerminal :: String
 myTerminal        = "urxvtc -e tmux"
+
+myNonTmuxTerminal :: String
 myNonTmuxTerminal = "urxvtc -e bash"
 
+myFocusFollowsMouse :: Bool
 myFocusFollowsMouse = True
 
+myBorderWidth :: Word32
 myBorderWidth   = 2 -- px
 
+myModMask :: _
 myModMask       = mod4Mask
 
-myWorkspaces    = withScreens 2 $ map show [1..9]
+myWorkspaces :: [PhysicalWorkspace]
+myWorkspaces    = withScreens 2 $ map show ([1..9] :: [Int])
 
+myNormalBorderColor, myFocusedBorderColor :: String
 myNormalBorderColor  = "#dddddd"
 myFocusedBorderColor = "#ff0000"
 
@@ -35,6 +45,7 @@ shellPromptConfig = def
 ------------------------------------------------------------------------
 -- Key bindings
 --
+myKeys :: XConfig Layout -> _
 myKeys conf@XConfig {XMonad.modMask = modm} = M.fromList $
 
     -- launch a terminal
@@ -124,6 +135,7 @@ myKeys conf@XConfig {XMonad.modMask = modm} = M.fromList $
 ------------------------------------------------------------------------
 -- Mouse bindings
 --
+myMouseBindings :: XConfig Layout -> _
 myMouseBindings XConfig {XMonad.modMask = modm} = M.fromList
 
     -- mod-button1, Set the window to floating mode and move by dragging
@@ -148,6 +160,7 @@ myMouseBindings XConfig {XMonad.modMask = modm} = M.fromList
 -- restarting (with 'mod-q') to reset your layout state to the new
 -- defaults, as xmonad preserves your old layout settings by default.
 --
+myLayout :: _
 myLayout = tiled ||| Mirror tiled ||| Full
   where
      -- default tiling algorithm partitions the screen into two panes
@@ -177,6 +190,7 @@ myLayout = tiled ||| Mirror tiled ||| Full
 -- To match on the WM_NAME, you can use 'title' in the same way that
 -- 'className' and 'resource' are used below.
 --
+myManageHook :: Query (Endo WindowSet)
 myManageHook = composeAll
     [ isFullscreen --> doFullFloat
     --, className =? "MPlayer"        --> doFloat
@@ -203,6 +217,7 @@ myEventHook = ewmhDesktopsEventHook
 -- Perform an arbitrary action on each internal state change or X event.
 -- See the 'XMonad.Hooks.DynamicLog' extension for examples.
 --
+myLogHook :: X ()
 myLogHook = return ()
 
 ------------------------------------------------------------------------
@@ -213,6 +228,7 @@ myLogHook = return ()
 -- per-workspace layout choices.
 --
 -- By default, do nothing.
+myStartupHook :: X ()
 myStartupHook = return ()
 
 ------------------------------------------------------------------------
@@ -229,6 +245,7 @@ main = xmonad $ ewmh defaults
 --
 -- No need to modify this.
 --
+defaults :: XConfig _
 defaults = def {
       -- simple stuff
         terminal           = myTerminal,
