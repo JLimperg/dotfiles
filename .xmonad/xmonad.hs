@@ -27,8 +27,10 @@ myWorkspaces    = withScreens 2 $ map show [1..9]
 myNormalBorderColor  = "#dddddd"
 myFocusedBorderColor = "#ff0000"
 
-------------------------------------------------------------------------
--- Custom Layouts
+shellPromptConfig :: XPConfig
+shellPromptConfig = def
+    { font = "xft:DejaVu Sans"
+    }
 
 ------------------------------------------------------------------------
 -- Key bindings
@@ -40,8 +42,8 @@ myKeys conf@XConfig {XMonad.modMask = modm} = M.fromList $
 
     , ((modm .|. shiftMask, xK_s     ), spawn myNonTmuxTerminal)
 
-    -- launch dmenu
-    , ((modm              , xK_d     ), spawn "dmenu_run")
+    -- launch shell prompt
+    , ((modm              , xK_d     ), shellPrompt shellPromptConfig)
 
     -- close focused window
     , ((modm              , xK_s     ), kill)
