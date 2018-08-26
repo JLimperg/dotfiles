@@ -21,6 +21,7 @@
 !.vim/
 !.vimrc
 !.vimkeymap
+!.xbindkeysrc
 !.Xdefaults
 !.xmonad/
 !.zlogin
