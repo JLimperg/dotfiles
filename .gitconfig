@@ -3,3 +3,5 @@
 	email = jannis@limperg.de
 [push]
 	default = simple
+[color]
+	ui = auto
