@@ -1,15 +1,3 @@
-[submodule ".vim/bundle/ultisnips"]
-	path = .vim/bundle/ultisnips
-	url = https://github.com/SirVer/ultisnips
-[submodule ".vim/bundle/vimbufsync"]
-	path = .vim/bundle/vimbufsync
-	url = https://github.com/def-lkb/vimbufsync.git
-[submodule ".vim/bundle/tabular"]
-	path = .vim/bundle/tabular
-	url = https://github.com/godlygeek/tabular.git
-[submodule ".vim/bundle/vimproc.vim"]
-	path = .vim/bundle/vimproc.vim
-	url = https://github.com/Shougo/vimproc.vim.git
 [submodule ".emacs.d"]
 	path = .emacs.d
 	url = https://github.com/syl20bnr/spacemacs
