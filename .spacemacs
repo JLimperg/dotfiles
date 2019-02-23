@@ -308,6 +308,8 @@ executes.
  This function is mostly useful for variables that need to be set
 before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
+
+  (setq evil-want-abbrev-expand-on-insert-exit nil)
   )
 
 (defun n-map (key target)
@@ -346,6 +348,7 @@ This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
   (require 'agda-input) ;; enables Agda input method
+
   (spacemacs/toggle-highlight-long-lines-globally-on)
   (spacemacs/toggle-truncate-lines-on)
 
