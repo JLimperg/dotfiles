@@ -56,6 +56,7 @@ values."
      ;; version-control
      agda
      latex
+     coq
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -457,8 +458,6 @@ you should place your code here."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
-
-;; Open .v files with Proof General's Coq mode
-(require 'proof-site "~/.emacs.d/lisp/PG/generic/proof-site")
-(add-hook 'coq-mode-hook #'company-coq-mode)
+ '(proof-eager-annotation-face ((t (:background "medium blue"))))
+ '(proof-error-face ((t (:background "dark red"))))
+ '(proof-warning-face ((t (:background "indianred3")))))
