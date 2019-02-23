@@ -12,3 +12,8 @@ export XDG_DOWNLOAD_DIR
 export XDG_MUSIC_DIR
 export XDG_PICTURES_DIR
 export XDG_VIDEOS_DIR
+
+agent=$(command -v keychain)
+if [ -x "$agent" ]; then
+  eval $(keychain --quiet --eval)
+fi
