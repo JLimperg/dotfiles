@@ -496,6 +496,9 @@ Put your configuration code here, except for variables that should be set
 before packages are loaded."
   (require 'agda-input) ;; enables Agda input method
 
+  ; Disable auto-indenting when pasting in an Agda buffer.
+  (add-to-list 'spacemacs-indent-sensitive-modes 'agda2-mode)
+
   (spacemacs/toggle-highlight-long-lines-globally-on)
   (spacemacs/toggle-truncate-lines-on)
 
