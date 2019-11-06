@@ -503,6 +503,7 @@ before packages are loaded."
   (spacemacs/toggle-truncate-lines-on)
 
   (setq-default evil-escape-key-sequence "nr")
+  (setq-default default-input-method 'Agda)
 
   (nv-map "x" 'evil-substitute)
   (nv-map "X" 'evil-change-whole-line)
