@@ -2,8 +2,7 @@ export VISUAL="/usr/bin/vim"
 export EDITOR="/usr/bin/vim"
 export PATH="/home/jannis/bin:/home/jannis/.local/bin:${PATH}"
 
-opam=`which opam` &> /dev/null
-[ $? -eq 0 ] && eval `"$opam" config env --shell=bash`
+source ~/.opam/opam-init/init.sh &> /dev/null || true
 
 test -f "/home/jannis/.config/user-dirs.dirs" && source "/home/jannis/.config/user-dirs.dirs"
 export XDG_DESKTOP_DIR
