@@ -595,6 +595,8 @@ before packages are loaded."
   ;; (vo-map "e ," 'evil-inner-paragraph)
   ;; (vo-map "a ." 'evil-a-tag)
   ;; (vo-map "e ." 'evil-inner-tag)
+
+  (n-map "<SPC> t M" 'toggle-input-method)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
