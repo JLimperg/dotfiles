@@ -520,12 +520,11 @@ before packages are loaded."
   (nv-map "v" 'evil-delete-char)
   (nv-map "V" 'evil-delete-backward-char)
   (nv-map "l" 'evil-replace-state)
-  ; (nv-map "L" 'evil-virtual-replace-state) ; TODO
+  ; (nv-map "L" 'evil-virtual-replace-state) ; TODO type error
   (nv-map "c" 'evil-open-below)
   (nv-map "C" 'evil-open-above)
   (nv-map "w" 'undo)
   (nv-map "W" 'redo)
-  ; (k-map "C-w" 'evil-undo-line) ; TODO
   (nv-map "K" 'evil-save-modified-and-close)
   (nvo-map "h" 'evil-backward-word-begin)
   (nvo-map "H" 'evil-backward-WORD-begin)
@@ -539,7 +538,7 @@ before packages are loaded."
   (nv-map "ẞ" 'evil-execute-macro)
   (nv-map "u" 'evil-change)
   (nv-map "U" 'evil-change-line)
-  (nvo-map "i" 'evil-delete)
+  (nvo-map "i" 'evil-delete) ; if we don't o-map here, the binding doesn't work
   (nv-map "I" 'evil-replace)
   (nv-map "a" 'evil-append)
   (nv-map "A" 'evil-append-line)
@@ -587,24 +586,8 @@ before packages are loaded."
   (n-map "z t" 'evil-window-up)
   (n-map "z d" 'evil-window-right)
 
-  ;; (vo-map "a S" 'evil-a-WORD)
-  ;; (vo-map "e S" 'evil-inner-WORD)
-  ;; (vo-map "a n" 'evil-a-word)
-  ;; (vo-map "e n" 'evil-inner-word)
-  ;; (vo-map "a r" 'evil-a-paren)
-  ;; (vo-map "e r" 'evil-inner-paren)
-  ;; (vo-map "a t" 'evil-a-bracket)
-  ;; (vo-map "e t" 'evil-inner-bracket)
-  ;; (vo-map "a d" 'evil-a-curly)
-  ;; (vo-map "e d" 'evil-inner-curly)
-  ;; (vo-map "a y" 'evil-an-angle)
-  ;; (vo-map "e y" 'evil-inner-angle)
-  ;; (vo-map "a m" 'evil-a-sentence)
-  ;; (vo-map "e m" 'evil-inner-sentence)
-  ;; (vo-map "a ," 'evil-a-paragraph)
-  ;; (vo-map "e ," 'evil-inner-paragraph)
-  ;; (vo-map "a ." 'evil-a-tag)
-  ;; (vo-map "e ." 'evil-inner-tag)
+  ; TODO The above binding of i in operator mode kills all the evil-inner-*
+  ; bindings. Redo those, but with prefix e.
 
   (n-map "<SPC> t M" 'toggle-input-method)
   )
