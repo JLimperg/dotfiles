@@ -555,6 +555,7 @@ before packages are loaded."
   (nvo-map "y" 'evil-ex-search-next)
   (nvo-map "Y" 'evil-ex-search-previous)
   (nvo-map "C-y" 'evil-fill-and-move)
+  (nvo-map "C-Y" 'fill-paragraph)
   (nv-map "ü" 'evil-visual-char)
   (nv-map "Ü" 'evil-visual-line)
   (nv-map "C-ü" 'evil-visual-block)
