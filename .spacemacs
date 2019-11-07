@@ -33,29 +33,23 @@ This function should only modify configuration layer settings."
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
-     yaml
-     html
-     markdown
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press `SPC f e R' (Vim style) or
      ;; `M-m f e R' (Emacs style) to install them.
      ;; ----------------------------------------------------------------
-     haskell
-     helm
      (auto-completion
-       (haskell :variables haskell-completion-backend 'intero))
-     ;; better-defaults
+      (haskell :variables haskell-completion-backend 'intero))
      emacs-lisp
      git
-     ;; markdown
-     ;; org
-     ;; (shell :variables
-     ;;        shell-default-height 30
-     ;;        shell-default-position 'bottom)
+     helm
      spell-checking
      syntax-checking
-     ;; version-control
+
+     yaml
+     html
+     markdown
+     haskell
      agda
      latex
      coq
