@@ -65,6 +65,7 @@ This function should only modify configuration layer settings."
    dotspacemacs-additional-packages
    '(
      lean-mode
+     general
      )
 
    ;; A list of packages that cannot be updated.
@@ -457,32 +458,6 @@ If you are unsure, try setting them in `dotspacemacs/user-config' first."
   (setq evil-want-abbrev-expand-on-insert-exit nil)
   )
 
-(defun n-map (key target)
-  (define-key evil-normal-state-map   (kbd key) target)
-  )
-
-(defun o-map (key target)
-  (define-key evil-operator-state-map (kbd key) target)
-  )
-
-(defun v-map (key target)
-  (define-key evil-visual-state-map   (kbd key) target)
-  )
-
-(defun nv-map (key target)
-  (n-map key target)
-  (v-map key target)
-  )
-
-(defun nvo-map (key target)
-  (nv-map key target)
-  (o-map key target)
-  )
-
-(defun vo-map (key target)
-  (v-map key target)
-  (o-map key target)
-  )
 
 (defun dotspacemacs/user-load ()
   "Library to load while dumping.
@@ -498,6 +473,7 @@ configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
   (require 'agda-input) ;; enables Agda input method
+  (require 'general)
 
   ; Disable auto-indenting when pasting in an Agda buffer.
   (add-to-list 'spacemacs-indent-sensitive-modes 'agda2-mode)
@@ -509,82 +485,131 @@ before packages are loaded."
   (setq-default ispell-dictionary "british")
   (setq-default default-input-method 'Agda)
 
-  (nv-map "x" 'evil-substitute)
-  (nv-map "X" 'evil-change-whole-line)
-  (nv-map "v" 'evil-delete-char)
-  (nv-map "V" 'evil-delete-backward-char)
-  (nv-map "l" 'evil-replace-state)
-  ; (nv-map "L" 'evil-virtual-replace-state) ; TODO type error
-  (nv-map "c" 'evil-open-below)
-  (nv-map "C" 'evil-open-above)
-  (nv-map "w" 'undo)
-  (nv-map "W" 'redo)
-  (nv-map "K" 'evil-save-modified-and-close)
-  (nvo-map "h" 'evil-backward-word-begin)
-  (nvo-map "H" 'evil-backward-WORD-begin)
-  (nvo-map "g" 'evil-backward-word-end)
-  (nvo-map "G" 'evil-backward-WORD-end)
-  (nvo-map "f" 'evil-forward-word-end)
-  (nvo-map "F" 'evil-forward-WORD-end)
-  (nvo-map "q" 'evil-forward-word-begin)
-  (nvo-map "Q" 'evil-forward-WORD-begin)
-  (nv-map "ß" 'evil-record-macro)
-  (nv-map "ẞ" 'evil-execute-macro)
-  (nv-map "u" 'evil-change)
-  (nv-map "U" 'evil-change-line)
-  (nvo-map "i" 'evil-delete) ; if we don't o-map here, the binding doesn't work
-  (nv-map "I" 'evil-replace)
-  (nv-map "a" 'evil-append)
-  (nv-map "A" 'evil-append-line)
-  (nv-map "e" 'evil-insert)
-  (nv-map "E" 'evil-insert-line)
-  (nv-map "o" 'evil-repeat)
-  (nvo-map "S" 'evil-beginning-of-visual-line)
-  (nvo-map "n" 'evil-backward-char)
-  (nvo-map "N" 'evil-first-non-blank)
-  (nvo-map "C-n" 'evil-first-non-blank-of-visual-line)
-  (nvo-map "r" 'evil-next-visual-line)
-  (nvo-map "R" 'end-of-buffer)
-  (nvo-map "C-r" 'evil-window-bottom)
-  (nvo-map "t" 'evil-previous-visual-line)
-  (nvo-map "T" 'beginning-of-buffer)
-  (nvo-map "C-t" 'evil-goto-first-line)
-  (nvo-map "d" 'evil-forward-char)
-  (nvo-map "D" 'evil-end-of-line)
-  (nvo-map "C-d" 'evil-end-of-visual-line)
-  (nvo-map "y" 'evil-ex-search-next)
-  (nvo-map "Y" 'evil-ex-search-previous)
-  (nvo-map "C-y" 'evil-fill-and-move)
-  (nvo-map "C-Y" 'fill-paragraph)
-  (nv-map "ü" 'evil-visual-char)
-  (nv-map "Ü" 'evil-visual-line)
-  (nv-map "C-ü" 'evil-visual-block)
-  (nv-map "ö" 'evil-shift-left)
-  (nv-map "Ö" 'evil-shift-right)
-  (nv-map "ä" 'evil-paste-after)
-  (nv-map "Ä" 'evil-paste-before)
-  (nv-map "p" 'evil-yank)
-  (nv-map "P" 'evil-join)
-  (nvo-map "b" 'evil-find-char)
-  (nvo-map "B" 'evil-find-char-backward)
-  (nvo-map "m" 'evil-find-char-to)
-  (nvo-map "M" 'evil-find-char-to-backward)
-  (nvo-map "," 'evil-repeat-find-char)
-  (nv-map "." 'evil-set-marker)
-  (nvo-map "•" 'evil-goto-mark-line)
-  (nvo-map "C-." 'evil-goto-mark)
+  ;; KEY BINDINGS
 
-  (n-map "z h" 'evil-window-split)
-  (n-map "z g" 'evil-window-vsplit)
-  (n-map "z n" 'evil-window-left)
-  (n-map "z r" 'evil-window-down)
-  (n-map "z t" 'evil-window-up)
-  (n-map "z d" 'evil-window-right)
+  ;; Note on motion state: Motion state is a special state that is used in
+  ;; read-only modes. Key bindings for motion state are inherited by
+  ;; normal/visual/operator modes unless overridden. Despite this, whenever we
+  ;; define a motion-state key binding, we also explicitly define it for
+  ;; normal/visual/operator modes. This is to prevent the default keybindings in
+  ;; e.g. normal state overriding our motion state bindings.
 
-  ; TODO The above binding of i in operator mode kills all the evil-inner-*
-  ; bindings. Redo those, but with prefix e.
+  ;; Motion
+  (general-define-key
+   :states '(motion normal visual operator)
+   "h" 'evil-backward-word-begin
+   "H" 'evil-backward-WORD-begin
+   "g" 'evil-backward-word-end
+   "G" 'evil-backward-WORD-end
+   "f" 'evil-forward-word-end
+   "F" 'evil-forward-WORD-end
+   "q" 'evil-forward-word-begin
+   "Q" 'evil-forward-WORD-begin
+   "n" 'evil-backward-char
+   "N" 'evil-first-non-blank
+   "C-n" 'evil-first-non-blank-of-visual-line
+   "C-N" 'evil-beginning-of-visual-line
+   "r" 'evil-next-visual-line
+   "R" 'end-of-buffer
+   "C-r" 'evil-window-bottom
+   "t" 'evil-previous-visual-line
+   "T" 'beginning-of-buffer
+   "C-t" 'evil-goto-first-line
+   "d" 'evil-forward-char
+   "D" 'evil-end-of-line
+   "C-d" 'evil-end-of-visual-line
+   "y" 'evil-ex-search-next
+   "Y" 'evil-ex-search-previous
+   "b" 'evil-find-char
+   "B" 'evil-find-char-backward
+   "m" 'evil-find-char-to
+   "M" 'evil-find-char-to-backward
+   "," 'evil-repeat-find-char
+   "•" 'evil-goto-mark-line
+   "C-." 'evil-goto-mark
+   )
 
-  (n-map "<SPC> t M" 'toggle-input-method)
+  ;; State changes
+  (general-define-key
+   :states '(normal visual)
+   "x" 'evil-substitute
+   "X" 'evil-change-whole-line
+   "l" 'evil-replace-state
+   ;; "L" 'evil-virtual-replace-state ; TODO type error
+   "c" 'evil-open-below
+   "C" 'evil-open-above
+   "u" 'evil-change
+   "U" 'evil-change-line
+   "I" 'evil-replace
+   "a" 'evil-append
+   "A" 'evil-append-line
+   "e" 'evil-insert
+   "E" 'evil-insert-line
+   "ü" 'evil-visual-char
+   "Ü" 'evil-visual-line
+   "C-ü" 'evil-visual-block
+   )
+
+  ;; Other normal/visual commands
+  (general-define-key
+   :states '(normal visual)
+   "v" 'evil-delete-char
+   "V" 'evil-delete-backward-char
+   "w" 'undo
+   "W" 'redo
+   "ß" 'evil-record-macro
+   "ẞ" 'evil-execute-macro
+   "o" 'evil-repeat
+   "C-y" 'evil-fill-and-move
+   "C-Y" 'fill-paragraph
+   "ö" 'evil-shift-left
+   "Ö" 'evil-shift-right
+   "ä" 'evil-paste-after
+   "Ä" 'evil-paste-before
+   "p" 'evil-yank
+   "P" 'evil-join
+   "." 'evil-set-marker
+   "<SPC> t M" 'toggle-input-method
+   )
+
+  ;; Special case: evil-surround-region in normal mode. For visual and operator
+  ;; modes, evil-surround-mode already has appropriate key bindings, but we want
+  ;; to have "S" in visual mode as well for consistency.
+  (general-define-key
+   :states 'normal
+   "S" 'evil-surround-region
+   )
+
+  (general-define-key
+   :keymaps 'evil-surround-mode-map
+   "<visual-state> S" 'evil-surround-region
+   )
+
+  ;; The evil-delete special case
+  ;; i must be bound in operator state as well to enable "i i"
+  (general-define-key
+   :states '(normal visual operator)
+   "i" 'evil-delete
+   )
+
+  ;; Thus, we move the "inner text objects" binding in operator state from "i"
+  ;; to "e".
+  (general-define-key
+   :states 'operator
+   "e" evil-inner-text-objects-map
+   )
+
+  ;; Window manipulation
+  (general-define-key
+   :states '(normal visual)
+   :prefix "z"
+   "h" 'evil-window-split
+   "g" 'evil-window-vsplit
+   "n" 'evil-window-left
+   "r" 'evil-window-down
+   "t" 'evil-window-up
+   "d" 'evil-window-right
+   )
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
