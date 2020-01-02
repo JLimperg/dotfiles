@@ -53,6 +53,7 @@ This function should only modify configuration layer settings."
      agda
      latex
      coq
+     lean
      )
 
    ;; List of additional packages that will be installed without being
@@ -64,7 +65,6 @@ This function should only modify configuration layer settings."
    ;; Also include the dependencies as they will not be resolved automatically.
    dotspacemacs-additional-packages
    '(
-     lean-mode
      general
      )
 
@@ -610,6 +610,7 @@ before packages are loaded."
    "d" 'evil-window-right
    )
   )
+
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
