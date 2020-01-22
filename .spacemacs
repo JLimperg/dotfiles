@@ -600,7 +600,7 @@ before packages are loaded."
 
   ;; Window manipulation
   (general-define-key
-   :states '(normal visual)
+   :states '(motion normal visual)
    :prefix "z"
    "h" 'evil-window-split
    "g" 'evil-window-vsplit
