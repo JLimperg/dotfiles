@@ -623,6 +623,7 @@ This function is called at the very end of Spacemacs initialization."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(lean-extra-arguments (quote ("--threads" "8")))
  '(lean-memory-limit 4000)
  '(package-selected-packages
    (quote
