@@ -1,6 +1,6 @@
 export VISUAL="/usr/bin/vim"
 export EDITOR="/usr/bin/vim"
-export PATH="/home/jannis/bin:/home/jannis/.local/bin:${PATH}"
+export PATH="${HOME}/bin:${HOME}/.local/bin:${HOME}/.elan/bin:${HOME}/.mathlib/bin:${PATH}"
 
 source ~/.opam/opam-init/init.sh &> /dev/null || true
 
