@@ -39,13 +39,14 @@ This function should only modify configuration layer settings."
      ;; `M-m f e R' (Emacs style) to install them.
      ;; ----------------------------------------------------------------
      (auto-completion
-      (haskell :variables haskell-completion-backend 'intero))
+      (haskell :variables haskell-completion-backend 'lsp))
      emacs-lisp
      git
      helm
      spell-checking
      syntax-checking
 
+     lsp
      yaml
      html
      markdown
