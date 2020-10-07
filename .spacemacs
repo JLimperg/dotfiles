@@ -32,7 +32,7 @@ This function should only modify configuration layer settings."
 
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
-   '(javascript
+   '(
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press `SPC f e R' (Vim style) or
@@ -55,6 +55,8 @@ This function should only modify configuration layer settings."
      latex
      coq
      lean
+     (python :variables python-backend 'lsp python-lsp-server 'pyls)
+     javascript
      )
 
    ;; List of additional packages that will be installed without being
@@ -652,7 +654,10 @@ This function is called at the very end of Spacemacs initialization."
     (yasnippet-snippets writeroom-mode visual-fill-column web-beautify treemacs-projectile treemacs-evil treemacs ht pfuture symon string-inflection spaceline-all-the-icons prettier-js password-generator overseer nameless magit-svn impatient-mode htmlize simple-httpd helm-xref helm-purpose window-purpose imenu-list helm-git-grep gitignore-templates evil-lion evil-goggles evil-cleverparens paredit editorconfig doom-modeline eldoc-eval shrink-path all-the-icons memoize counsel-projectile counsel swiper ivy centered-cursor-mode font-lock+ dotenv-mode lean-mode dash-functional transient lv origami proof-general fstar-mode company-quickhelp quick-peek yaml-mode spinner parent-mode pkg-info flx anzu popup web-mode tagedit slim-mode scss-mode sass-mode pug-mode helm-css-scss haml-mode emmet-mode company-web web-completion-data flyspell-correct-helm flyspell-correct auto-dictionary ghub epl let-alist powerline projectile diminish bind-key packed avy highlight iedit smartparens bind-map f s dash evil goto-chg undo-tree helm helm-core async hydra winum fuzzy company-coq company-math math-symbol-lists company-auctex auctex-latexmk auctex mmm-mode markdown-toc markdown-mode gh-md helm-company helm-c-yasnippet company-statistics company-cabal auto-yasnippet ac-ispell auto-complete orgit org magit-gitflow intero helm-gitignore haskell-snippets flycheck-pos-tip pos-tip flycheck-haskell evil-magit magit magit-popup git-commit company-ghci company-ghc ghc smeargle hlint-refactor hindent helm-hoogle yasnippet gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link flycheck with-editor company haskell-mode cmm-mode ws-butler window-numbering which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spacemacs-theme spaceline restart-emacs request rainbow-delimiters quelpa popwin persp-mode pcre2el paradox org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint info+ indent-guide ido-vertical-mode hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation hide-comnt help-fns+ helm-themes helm-swoop helm-projectile helm-mode-manager helm-make helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-args evil-anzu eval-sexp-fu elisp-slime-nav dumb-jump define-word column-enforce-mode clean-aindent-mode auto-highlight-symbol auto-compile aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line)))
  '(safe-local-variable-values
    (quote
-    ((eval let*
+    ((eval progn
+           (pp-buffer)
+           (indent-buffer))
+     (eval let*
            ((Workshops-topdir
              (expand-file-name
               (locate-dominating-file buffer-file-name ".dir-locals.el")))
