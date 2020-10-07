@@ -1,5 +1,5 @@
-export VISUAL="/usr/bin/vim"
-export EDITOR="/usr/bin/vim"
+export VISUAL="/usr/bin/emacsclient -a /usr/bin/vim"
+export EDITOR="$VISUAL"
 export PATH="${HOME}/bin:${HOME}/.local/bin:${HOME}/.elan/bin:${HOME}/.mathlib/bin:${PATH}"
 
 source ~/.opam/opam-init/init.sh &> /dev/null || true
