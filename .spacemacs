@@ -57,6 +57,9 @@ This function should only modify configuration layer settings."
      lean
      (python :variables python-backend 'lsp python-lsp-server 'pyls)
      javascript
+     (fstar :variables
+            fstar-executable "/home/jannis/.local/opt/fstar/bin/fstar.exe"
+            fstar-smt-executable "/home/jannis/.local/opt/fstar/bin/z3")
      )
 
    ;; List of additional packages that will be installed without being wrapped
