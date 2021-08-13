@@ -9,10 +9,6 @@
 !.mpv/
 !.mpv/config
 !.msmtprc
-!.nixpkgs/
-!.nixpkgs/*
-!.nixpkgs/local/
-!.nixpkgs/local/*
 !.profile
 !.tmux.conf
 !.vim/
