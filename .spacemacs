@@ -73,6 +73,19 @@ This function should only modify configuration layer settings."
    dotspacemacs-additional-packages
    '(
      general
+     key-chord
+
+     ;; Lean4 and its dependencies
+     (lean4-mode :location (recipe
+                            :fetcher github
+                            :repo "leanprover/lean4"
+                            :files ("lean4-mode/*.el")))
+     dash
+     dash-functional
+     flycheck
+     lsp-mode
+     f
+     s
      )
 
    ;; A list of packages that cannot be updated.
@@ -553,20 +566,36 @@ This function is called at the very end of Spacemacs startup, after layer
 configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
-  (require 'agda-input) ;; enables Agda input method
-  (require 'general)
+  ;; Enable git-commit mode when editing COMMIT_EDITMSG
+  (require 'git-commit)
+  (global-git-commit-mode t)
 
-  ; Disable auto-indenting when pasting in an Agda buffer.
-  (add-to-list 'spacemacs-indent-sensitive-modes 'agda2-mode)
-
+  ;; Misc settings
   (spacemacs/toggle-highlight-long-lines-globally-on)
   (spacemacs/toggle-truncate-lines-on)
-
-  (setq-default evil-escape-key-sequence "nr")
+  (setq-default evil-escape-key-sequence "nr") ;; Doesn't seem to work?
   (setq-default ispell-dictionary "british")
-  (setq-default default-input-method 'Agda)
+
+  ;; Disable auto-indenting when pasting in Agda/Lean buffers.
+  (add-to-list 'spacemacs-indent-sensitive-modes 'agda2-mode)
+  (add-to-list 'spacemacs-indent-sensitive-modes 'lean-mode)
+  (add-to-list 'spacemacs-indent-sensitive-modes 'lean4-mode)
+
+  ;; Additional key bindings for lean4-mode
+  (spacemacs/set-leader-keys-for-major-mode 'lean4-mode
+    "g g" 'xref-find-definitions
+    "R" 'lean4-refresh-file-dependencies)
+
+  ;; Additional paren pairs for lean4-mode
+  (with-eval-after-load 'smartparens
+    (sp-local-pair 'lean4-mode "/-" "-/")
+    (sp-local-pair 'lean4-mode "`'" nil :actions :rem)
+    (sp-local-pair 'lean4-mode "`" nil :actions :rem)
+    (sp-local-pair 'lean4-mode "⟨" "⟩")
+    (sp-local-pair 'lean4-mode "«" "»"))
 
   ;; KEY BINDINGS
+  (require 'general)
 
   ;; Note on motion state: Motion state is a special state that is used in
   ;; read-only modes. Key bindings for motion state are inherited by
@@ -691,6 +720,10 @@ before packages are loaded."
    "t" 'evil-window-up
    "d" 'evil-window-right
    )
+
+  ;; Escape from insert mode -- workaround for evil-escape not doing its job.
+  ;; (key-chord-mode 1)
+  ;; (key-chord-define evil-insert-state-map "nr" 'evil-normal-mode)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
