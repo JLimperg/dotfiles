@@ -1,4 +1,0 @@
-alias    ls="ls --color=auto"
-alias -g make.conf="/etc/portage/make.conf"
-alias -g package.use="/etc/portage/package.use"
-alias -g package.accept_keywords="/etc/portage/package.accept_keywords"
