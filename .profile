@@ -16,3 +16,5 @@ agent=$(command -v keychain)
 if [ -x "$agent" ]; then
   eval $(keychain --quiet --eval)
 fi
+
+if [ -e /home/jannis/.nix-profile/etc/profile.d/nix.sh ]; then . /home/jannis/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
