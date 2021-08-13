@@ -22,7 +22,6 @@
 !.vimkeymap
 !.xbindkeysrc
 !.Xdefaults
-!.xmonad/
 
 !.config
 .config/*
