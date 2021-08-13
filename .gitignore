@@ -30,3 +30,5 @@
 !.config/fish
 .config/fish/*
 !.config/fish/config.fish
+!.config/alacritty
+!.config/alacritty/*
