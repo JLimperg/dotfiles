@@ -16,7 +16,6 @@
 !.nixpkgs/local/
 !.nixpkgs/local/*
 !.profile
-!.spacemacs
 !.tmux.conf
 !.vim/
 !.vimrc
