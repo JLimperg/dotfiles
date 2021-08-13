@@ -33,3 +33,5 @@
 !.config/alacritty/*
 !.config/i3
 !.config/i3/*
+!.config/doom
+!.config/doom/*
