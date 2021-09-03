@@ -11,4 +11,6 @@ umask 002
 export GPG_TTY=$(tty)
 
 # Use fish as the shell
-[ -x /bin/fish ] && SHELL=/bin/fish exec /bin/fish
+if which fish &> /dev/null; then
+  SHELL=fish exec fish
+fi

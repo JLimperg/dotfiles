@@ -1,4 +1,9 @@
-export VISUAL="/usr/bin/emacsclient -a /usr/bin/vim"
+if which emacsclient &> /dev/null; then
+  export VISUAL="/usr/bin/emacsclient -a /usr/bin/vim"
+else
+  export VISUAL=vim
+fi
+
 export EDITOR="$VISUAL"
 export PATH="${HOME}/bin:${HOME}/.local/bin:${HOME}/.elan/bin:${HOME}/.mathlib/bin:${PATH}"
 
