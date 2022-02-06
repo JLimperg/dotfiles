@@ -28,6 +28,8 @@
 !.config/kitty/*
 !.config/i3
 !.config/i3/*
+.config/i3/local
+.config/i3/config
 !.config/sway
 !.config/sway/*
 .config/sway/local

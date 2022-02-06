@@ -1,5 +1,0 @@
-# Assignments for workspaces
-workspace "1: web"   output DP-2
-workspace "7: edit2" output DVI-D-0
-workspace "8: music" output DVI-D-0
-workspace "9: mail"  output DVI-D-0
