@@ -160,6 +160,12 @@
  :nvo "i" 'evil-delete
  :o "e" evil-inner-text-objects-map)
 
+;;; ... and the same for evil-tex.
+(after! evil-tex
+  (evil-define-key '(visual operator) 'evil-tex-mode
+    "i" nil
+    "e" evil-tex-inner-text-objects-map))
+
 ;; Window manipulation
 (map!
  :prefix "z"
