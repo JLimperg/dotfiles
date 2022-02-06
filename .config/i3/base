@@ -47,10 +47,10 @@ assign [class="^Thunderbird$"] "9: mail"
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec kitty
 
 # start a non-tmux terminal
-bindsym $mod+Shift+Return exec alacritty -o env.TERM=xterm-256color -e bash
+bindsym $mod+Shift+Return exec kitty -e bash
 
 # kill focused window
 bindsym $mod+Shift+X kill
