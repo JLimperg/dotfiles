@@ -50,7 +50,7 @@
   :map lean4-mode-map
   :localleader
   (:prefix ("g" . "go to")
-           "g" #'xref-find-definitions
+           "g" #'lsp-find-definition
            "G" #'xref-pop-marker-stack)
   (:prefix ("t" . "toggle")
            "i" #'lean4-toggle-info)
