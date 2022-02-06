@@ -3,15 +3,14 @@
 
 ;; Lean 4 and dependencies
 (package! dash)
-(package! flycheck)
-(package! dash-functional)
 (package! f)
-(package! s)
+(package! flycheck)
 (package! lsp-mode)
+(package! magit-section)
+(package! s)
 (package! lean4-mode :recipe
-  (:local-repo "~/uni/lean4/lean4-mode/"
-   :files ("lean4-mode/*.el")
-   :build (:not compile)))
+  (:host github
+   :repo "leanprover/lean4-mode"))
 
 ;; This package steals the "s" key which I want to use as localleader.
 (package! evil-snipe :disable t)
