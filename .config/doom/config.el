@@ -46,6 +46,9 @@
 ;;; Lean 4
 
 (after! lean4-mode
+ (setq comment-start-skip nil
+       comment-end-skip nil
+       comment-use-syntax nil)
  (map!
   :map lean4-mode-map
   :localleader
