@@ -64,6 +64,10 @@
   "r" #'lean4-refresh-file-dependencies
   ))
 
+(use-package! smartparens
+  :config
+  (sp-local-pair 'lean4-mode "⟨" "⟩"))
+
 ;;; Prefer Lean 4 over Lean 3
 (rassq-delete-all #'lean-mode auto-mode-alist)
 
