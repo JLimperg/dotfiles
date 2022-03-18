@@ -46,9 +46,6 @@
 ;;; Lean 4
 
 (after! lean4-mode
- (setq comment-start-skip nil
-       comment-end-skip nil
-       comment-use-syntax nil)
  (map!
   :map lean4-mode-map
   :localleader
@@ -61,8 +58,10 @@
            "c" #'lean4-leanpkg-configure
            "b" #'lean4-leanpkg-build
            "t" #'lean4-leanpkg-test)
-  "r" #'lean4-refresh-file-dependencies
-  ))
+  "r" #'lean4-refresh-file-dependencies))
+
+(setq-hook! lean4-mode
+  comment-multi-line t)
 
 (use-package! smartparens
   :config
