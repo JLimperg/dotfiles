@@ -56,10 +56,3 @@ set nowrap
 
 " Color scheme
 highlight SpecialKey ctermfg=grey
-
-" Completion
-let g:UltiSnipsExpandTrigger="<Tab>"
-let g:UltiSnipsJumpForwardTrigger="<Tab>"
-let g:UltiSnipsJumpBackwardTrigger="<S-Tab>"
-" UltiSnips integrates with neocompletion, so <Tab> now doubles
-" as the omnicompletion key.
