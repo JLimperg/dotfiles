@@ -43,6 +43,9 @@
 
 (global-display-fill-column-indicator-mode)
 
+(after! flycheck
+  (setq-default flycheck-checker-error-threshold 1000))
+
 ;;; Lean 4
 
 (after! lean4-mode
