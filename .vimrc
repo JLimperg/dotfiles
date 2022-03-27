@@ -1,4 +1,4 @@
-source ~/.vimkeymap
+source ~/.vim/keymap
 
 " Plugins
 execute pathogen#infect()

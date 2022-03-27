@@ -6,7 +6,6 @@
 !.profile
 !.vim/
 !.vimrc
-!.vimkeymap
 
 !.config
 .config/*
