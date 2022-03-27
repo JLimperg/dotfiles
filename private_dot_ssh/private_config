@@ -1,0 +1,46 @@
+AddKeysToAgent yes
+
+Host lappy
+  Hostname jannis-lappy.lan
+  User jannis
+  IdentityFile ~/.ssh/id_ed25519
+
+Host bizlappy
+  Hostname jannis-bizlappy.lan
+  User jannis
+  IdentityFile ~/.ssh/id_ed25519
+
+Host srv
+  Hostname limperg.de
+  User jannis
+  IdentityFile ~/.ssh/id_ed25519
+
+Host oldsrv
+  Hostname 5.45.106.220
+  User jannis
+  IdentityFile ~/.ssh/id_ed25519
+
+Host github
+  Hostname github.com
+  User git
+  IdentityFile ~/.ssh/id_ed25519
+
+Host gitlab
+  Hostname gitlab.com
+  User git
+  IdentityFile ~/.ssh/id_ed25519
+
+Host git-dcfr
+  Hostname limperg.de
+  User git-dcfr
+  IdentityFile ~/.ssh/id_ed25519
+
+Host mathlib-bench
+  Hostname mathlib-bench.limperg.de
+  User lean
+  IdentityFile ~/.ssh/id_rsa
+
+Host mathlib-bench-runner1
+  Hostname mathlib-bench-runner1.westeurope.cloudapp.azure.com
+  User lean
+  IdentityFile ~/.ssh/id_rsa
