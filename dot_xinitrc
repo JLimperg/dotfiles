@@ -1,0 +1,38 @@
+#!/bin/bash
+
+# Logging
+echo "====="
+echo "Starting on $(date)"
+echo "====="
+
+# Monitor setup for Desktop PC
+which-machine
+if [ "$?" -eq 0 ]; then
+  xrandr --output DP-2 --primary --mode 2560x1440 --rate 144 --output DVI-D-0 --mode 1920x1080 --rate 60 --left-of DP-2
+fi
+
+# Daemons
+which xbindkeys &>/dev/null
+[ $? -eq 0 ] && xbindkeys -f "/home/jannis/.config/xbindkeys/rc"
+
+which redshift &>/dev/null
+[ $? -eq 0 ] && redshift &
+
+which picom &>/dev/null
+[ $? -eq 0 ] && picom --daemon
+
+# Background
+xsetroot -solid black -cursor_name left_ptr
+feh --bg-max --randomize --no-fehbg -r '/home/jannis/.nocdp/wallpaper'
+
+which xbacklight &>/dev/null
+[ $? -eq 0 ] && xbacklight -set 60
+
+# No screen blanking, thank you
+xset -dpms
+xset s off
+
+# Extra keys
+[ -f ~/.Xmodmap ] && xmodmap ~/.Xmodmap
+
+exec dbus-run-session i3
