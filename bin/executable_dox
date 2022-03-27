@@ -1,0 +1,6 @@
+#!/bin/bash
+
+LOGDIR="$HOME/.log"
+
+mkdir -p "$LOGDIR"
+startx "$@" &>> "$LOGDIR/xinit"
