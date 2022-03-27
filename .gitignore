@@ -19,8 +19,6 @@
 !.config/fish
 .config/fish/*
 !.config/fish/config.fish
-!.config/alacritty
-!.config/alacritty/*
 !.config/kitty/
 !.config/kitty/*
 !.config/i3
