@@ -44,18 +44,3 @@ Host mathlib-bench-runner1
   Hostname mathlib-bench-runner1.westeurope.cloudapp.azure.com
   User lean
   IdentityFile ~/.ssh/id_rsa
-
-Host github-nixos-server
-  Hostname github.com
-  User git
-  IdentityFile /home/jannis/.ssh/github-nixos-server
-
-Host github-debattierclub-freiburg
-  Hostname github.com
-  User git
-  IdentityFile /home/jannis/.ssh/github-debattierclub-freiburg
-
-Host github-opentab
-  Hostname github.com
-  User git
-  IdentityFile /home/jannis/.ssh/github-opentab
