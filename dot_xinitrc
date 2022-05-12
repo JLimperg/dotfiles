@@ -21,6 +21,8 @@ which redshift &>/dev/null
 which picom &>/dev/null
 [ $? -eq 0 ] && picom --daemon
 
+gentoo-pipewire-launcher &
+
 # Background
 xsetroot -solid black -cursor_name left_ptr
 feh --bg-max --randomize --no-fehbg -r '/home/jannis/.nocdp/wallpaper'
