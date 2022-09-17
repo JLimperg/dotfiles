@@ -5,6 +5,11 @@ echo "====="
 echo "Starting on $(date)"
 echo "====="
 
+# DBus
+if command -v dbus-launch >/dev/null && test -z "${DBUS_SESSION_BUS_ADDRESS}"; then
+   eval $(dbus-launch --sh-syntax --exit-with-session)
+fi
+
 # Monitor setup for Desktop PC
 which-machine
 if [ "$?" -eq 0 ]; then
@@ -37,4 +42,4 @@ xset s off
 # Extra keys
 [ -f ~/.Xmodmap ] && xmodmap ~/.Xmodmap
 
-exec dbus-run-session i3
+exec i3
