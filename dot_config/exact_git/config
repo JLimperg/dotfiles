@@ -3,6 +3,7 @@
 	email = jannis@limperg.de
 [push]
 	default = simple
+	autoSetupRemote = true
 [color]
 	ui = auto
 [init]
