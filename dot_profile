@@ -5,7 +5,7 @@ else
 fi
 
 export EDITOR="$VISUAL"
-export PATH="${HOME}/bin:${HOME}/.local/bin:${HOME}/.elan/bin:${HOME}/.mathlib/bin:${PATH}"
+export PATH="${HOME}/bin:${HOME}/.local/bin:${HOME}/.elan/bin:${HOME}/.mathlib/bin:${HOME}/.ghcup/bin:${HOME}/.cabal/bin:${PATH}"
 
 source ~/.opam/opam-init/init.sh &> /dev/null || true
 
