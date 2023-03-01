@@ -10,7 +10,8 @@
 (package! s)
 (package! lean4-mode :recipe
   (:host github
-   :repo "leanprover/lean4-mode"))
+   :repo "leanprover/lean4-mode"
+   :files ("*.el" "data")))
 
 ;; This package steals the "s" key which I want to use as localleader.
 (package! evil-snipe :disable t)
