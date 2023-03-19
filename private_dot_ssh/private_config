@@ -44,3 +44,8 @@ Host mathlib-bench-runner1
   Hostname mathlib-bench-runner1.westeurope.cloudapp.azure.com
   User lean
   IdentityFile ~/.ssh/id_rsa
+
+Host gitlab-inria
+  Hostname gitlab.inria.fr
+  User git
+  IdentityFile ~/.ssh/id_ed25519
