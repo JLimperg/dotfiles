@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 REPO="$HOME/.emacs.d"
-COMMIT="d5ccac5d71c819035fa251f01d023b3f94b4fba4"
+COMMIT="b66ad7703134d8a91e8ae1fab84af3bb90fcca03"
 
 if [ ! -d "$REPO" ]; then
   git clone https://github.com/hlissner/doom-emacs "$REPO"
