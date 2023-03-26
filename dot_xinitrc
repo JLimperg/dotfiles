@@ -13,7 +13,7 @@ fi
 # Monitor setup for Desktop PC
 which-machine
 if [ "$?" -eq 0 ]; then
-  xrandr --output HDMI-0 --primary --mode 2560x1440 --rate 144 --output DVI-D-0 --mode 1920x1080 --rate 60 --left-of HDMI-0
+  xrandr --output DP-0 --primary --mode 2560x1440 --rate 144 --output HDMI-0 --mode 1920x1080 --rate 60 --left-of DP-0
 fi
 
 # Daemons
