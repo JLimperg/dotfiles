@@ -8,3 +8,5 @@
 	ui = auto
 [init]
 	defaultBranch = master
+[pull]
+	rebase = true
