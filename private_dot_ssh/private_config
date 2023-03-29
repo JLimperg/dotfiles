@@ -49,3 +49,8 @@ Host gitlab-inria
   Hostname gitlab.inria.fr
   User git
   IdentityFile ~/.ssh/id_ed25519
+
+Host gitlab-ifi
+  Hostname gitlab.ifi.lmu.de
+  User git
+  IdentityFile ~/.ssh/id_ed25519
