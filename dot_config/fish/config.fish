@@ -9,7 +9,7 @@ alias emacsc 'emacsclient'
 
 alias fsk 'cd ~/uni/fsk-timi-2023'
 alias aec 'cd ~/uni/serve/git-icfp-aec/events/2023'
-alias aesop 'cd ~/uni/aesop'
+alias aesop 'cd ~/uni/aesop/work'
 alias tcs 'cd ~/uni/tcs-www'
 alias lehre 'cd ~/uni/tcs-www/lehre/ss-2023/'
 alias meta-book 'cd ~/uni/meta-book'
