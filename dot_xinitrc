@@ -16,6 +16,11 @@ if [ "$?" -eq 0 ]; then
   xrandr --output DP-0 --primary --mode 2560x1440 --rate 144 --output HDMI-0 --mode 1920x1080 --rate 60 --left-of DP-0
 fi
 
+# DPI settings for Bizlappy
+if [ -f "$HOME/.Xresources" ]; then
+  xrdb -merge ~/.Xresources
+fi
+
 # Daemons
 which xbindkeys &>/dev/null
 [ $? -eq 0 ] && xbindkeys -f "/home/jannis/.config/xbindkeys/rc"
