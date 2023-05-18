@@ -31,6 +31,9 @@ which redshift &>/dev/null
 which picom &>/dev/null
 [ $? -eq 0 ] && picom --daemon
 
+which xsettingsd &>/dev/null
+[ $? -eq 0 ] && xsettingsd
+
 gentoo-pipewire-launcher &
 
 # Background
