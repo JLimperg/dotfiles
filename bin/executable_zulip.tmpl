@@ -1,0 +1,7 @@
+#!/bin/bash
+
+{{- if eq .chezmoi.hostname "jannis-bizlappy" }}
+exec ~/.local/bin/Zulip-*.AppImage
+{{- else }}
+exec ~/.local/bin/Zulip-*.AppImage --ozone-platform-hint=auto
+{{- end }}
