@@ -54,8 +54,9 @@ default_floating_border pixel 2
 hide_edge_borders smart
 
 # Assignments for clients
-assign [class="^Firefox$"] "1: web"
-assign [class="^Thunderbird$"] "9: mail"
+assign [app_id="firefox"] "1: web"
+assign [app_id="thunderbird"] "9: mail"
+assign [class="Zulip"] "6: zulip"
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
