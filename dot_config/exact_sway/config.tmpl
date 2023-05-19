@@ -208,10 +208,5 @@ client.background       #ffffff
 
 {{- if eq .chezmoi.hostname "jannis-desktop" }}
 output DVI-D-1 pos 0 0 res 1920x1080
-output DP-2 pos 1920 0 res 2560x1440 adaptive_sync on
-
-workspace "1: web"   output DP-2
-workspace "7: edit2" output DVI-D-1
-workspace "8: music" output DVI-D-1
-workspace "9: mail"  output DVI-D-1
+output HDMI-1 pos 1920 0 res 2560x1440 adaptive_sync on
 {{- end }}
