@@ -210,3 +210,7 @@ client.background       #ffffff
 output DVI-D-1 pos 0 0 res 1920x1080
 output HDMI-1 pos 1920 0 res 2560x1440 adaptive_sync on
 {{- end }}
+
+{{- if eq .chezmoi.hostname "jannis-bizlappy" }}
+output eDP-1 scale 1.5
+{{- end }}
