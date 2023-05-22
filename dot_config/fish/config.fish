@@ -18,3 +18,4 @@ alias book 'cd ~/uni/proof-assistants-book/tex/03_inductive_types_and_recursive_
 alias website 'cd ~/prog/blog'
 alias mathlib 'cd ~/uni/mathlib4/work'
 alias sv 'cd ~/uni/sv'
+alias krepp 'cd ~/uni/krepp'
