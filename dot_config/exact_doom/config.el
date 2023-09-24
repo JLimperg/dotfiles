@@ -47,7 +47,7 @@
   (setq-default flycheck-checker-error-threshold 1000))
 
 (after! lsp-mode
-  (setq-default lsp-file-watch-threshold 2000))
+  (setq-default lsp-file-watch-threshold 3000))
 
 (setq-default ispell-dictionary "en_GB")
 
