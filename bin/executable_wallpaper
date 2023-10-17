@@ -1,0 +1,4 @@
+#!/bin/bash
+
+files=(~/.nocdp/wallpaper/gris/*)
+swaybg -i "${files[RANDOM % ${#files[@]}]}" -m fill -o "*"
