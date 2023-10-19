@@ -1,13 +1,7 @@
 ;; -*- no-byte-compile: t; -*-
 ;;; $DOOMDIR/packages.el
 
-;; Lean 4 and dependencies
-(package! dash)
-(package! f)
-(package! flycheck)
-(package! lsp-mode)
-(package! magit-section)
-(package! s)
+;; Lean 4
 (package! lean4-mode :recipe
   (:host github
    :repo "leanprover/lean4-mode"
