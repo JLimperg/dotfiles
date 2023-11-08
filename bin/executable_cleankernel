@@ -1,0 +1,3 @@
+#!/bin/bash
+
+sudo eclean-kernel -A -n 3 --exclude=config -d

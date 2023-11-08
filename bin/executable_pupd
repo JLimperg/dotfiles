@@ -1,0 +1,4 @@
+#!/bin/bash
+
+sudo snapper -c root create --cleanup-algorithm number --command \
+  "emerge --update --changed-use --deep --with-bdeps=y --backtrack=30 --exclude gentoo-sources --exclude dist-kernel world $*"

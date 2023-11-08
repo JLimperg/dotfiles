@@ -1,0 +1,38 @@
+#!/bin/bash
+
+SRC=/usr/src/linux
+GRUBCFG=/boot/grub/grub.cfg
+
+srcdir=$(dirname "$(readlink -f "$0")")
+
+${srcdir}/which-machine
+case $? in
+  0) mkinitramfs="genkernel initramfs" ;;
+  1) mkinitramfs="genkernel initramfs" ;;
+  2) mkinitramfs="genkernel initramfs" ;;
+  *) mkinitramfs="true" ;;
+esac
+
+num_jobs=5
+${srcdir}/which-machine
+case $? in
+  0) num_jobs=17 ;;
+  1) num_jobs=5 ;;
+  2) num_jobs=9 ;;
+esac
+
+makeopts="-C '${SRC}' LD=ld.bfd"
+
+script=$(cat <<EOF
+  make ${makeopts} oldconfig \
+    && make ${makeopts} -j"$num_jobs" \
+    && make ${makeopts} install \
+    && make ${makeopts} modules_install \
+    && eval "${mkinitramfs}" \
+    && mv ${GRUBCFG} ${GRUBCFG}.old \
+    && grub-mkconfig -o ${GRUBCFG} \
+    && emerge --ask=n @module-rebuild
+EOF
+)
+
+sudo sh -c "$script"

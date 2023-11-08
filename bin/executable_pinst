@@ -1,0 +1,3 @@
+#!/bin/bash
+
+sudo snapper -c root create --cleanup-algorithm number --command "emerge $*"
