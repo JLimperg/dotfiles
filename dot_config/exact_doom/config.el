@@ -98,9 +98,8 @@
  :nvom "q" 'evil-forward-word-begin
  :nvom "Q" 'evil-forward-WORD-begin
  :nvom "n" 'evil-backward-char
- :nvom "N" 'evil-first-non-blank
- :nvom "C-n" 'evil-first-non-blank-of-visual-line
- :nvom "C-N" 'evil-beginning-of-visual-line
+ :nvom "N" 'evil-first-non-blank-of-visual-line
+ :nvom "C-n" 'evil-first-non-blank
  :nvom "r" 'evil-next-visual-line
  :nvom "R" 'end-of-buffer
  :nvom "C-r" 'evil-window-bottom
@@ -108,8 +107,8 @@
  :nvom "T" 'beginning-of-buffer
  :nvom "C-t" 'evil-goto-first-line
  :nvom "d" 'evil-forward-char
- :nvom "D" 'evil-end-of-line
- :nvom "C-d" 'evil-end-of-visual-line
+ :nvom "D" 'evil-end-of-visual-line
+ :nvom "C-d" 'evil-end-of-line
  :nvom "y" 'evil-ex-search-next
  :nvom "Y" 'evil-ex-search-previous
  :nvom "b" 'evil-find-char
