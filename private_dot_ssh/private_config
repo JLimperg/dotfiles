@@ -54,3 +54,8 @@ Host gitlab-ifi
   Hostname gitlab.ifi.lmu.de
   User git
   IdentityFile ~/.ssh/id_ed25519
+
+Host gitlab-lrz
+  Hostname gitlab.lrz.de
+  User git
+  IdentityFile ~/.ssh/id_ed25519
