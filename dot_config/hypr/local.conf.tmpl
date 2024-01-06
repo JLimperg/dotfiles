@@ -1,6 +1,8 @@
+{{- if eq .chezmoi.hostname "jannis-desktop" }}
 env = GBM_BACKEND,nvidia-drm
 env = __GLX_VENDOR_LIBRARY_NAME,nvidia
 env = LIBVA_DRIVER_NAME,nvidia
 
 monitor=HDMI-A-1,1920x1080@60,0x0,1
 monitor=DP-2,2560x1440@144,1920x0,1
+{{- end }}
