@@ -90,9 +90,11 @@ button:hover {
 }
 
 #battery {
+    box-shadow: inset 0 -3px transparent;
 }
 
 #battery.charging, #battery.plugged {
+    box-shadow: inset 0 -3px green;
 }
 
 @keyframes blink {
@@ -103,7 +105,7 @@ button:hover {
 }
 
 #battery.critical:not(.charging) {
-    background-color: #f53c3c;
+    background-color: red;
     color: #ffffff;
     animation-name: blink;
     animation-duration: 0.5s;
@@ -129,25 +131,27 @@ label:focus {
 }
 
 #network {
+    box-shadow: inset 0 -3px transparent;
 }
 
 #network.disconnected {
-    background-color: #f53c3c;
+    box-shadow: inset 0 -3px red;
 }
 
 #pulseaudio {
+    box-shadow: inset 0 -3px transparent;
 }
 
 #pulseaudio.muted {
-    background-color: #90b1b1;
-    color: #2a5c45;
+    box-shadow: inset 0 -3px red;
 }
 
 #wireplumber {
+    box-shadow: inset 0 -3px transparent;
 }
 
 #wireplumber.muted {
-    background-color: #f53c3c;
+    box-shadow: inset 0 -3px red;
 }
 
 #custom-media {
