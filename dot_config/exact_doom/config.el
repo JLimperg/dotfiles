@@ -207,8 +207,11 @@
 
 (map!
  :prefix "."
- :n "c l" 'evilnc-comment-or-uncomment-lines
- )
+ :n "c l" 'evilnc-comment-or-uncomment-lines)
+
+(map!
+ :map 'vertico-map
+ "C-e" 'embark-export)
 
 
 ;; Here are some additional functions/macros that could help you configure Doom:
