@@ -1,36 +1,35 @@
 #!/bin/bash
 
-SRC=/usr/src/linux
-GRUBCFG=/boot/grub/grub.cfg
+src=/usr/src/linux
 
 srcdir=$(dirname "$(readlink -f "$0")")
 
 ${srcdir}/which-machine
 case $? in
-  0) mkinitramfs="genkernel initramfs" ;;
-  1) mkinitramfs="genkernel initramfs" ;;
-  2) mkinitramfs="genkernel initramfs" ;;
-  *) mkinitramfs="true" ;;
+  0) num_jobs=17
+     microcode="/boot/amd-uc.img" ;;
+  1) num_jobs=5
+     microcode="/boot/intel-uc.img" ;;
+  2) num_jobs=9
+     microcode="/boot/intel-uc.img" ;;
 esac
 
-num_jobs=5
-${srcdir}/which-machine
-case $? in
-  0) num_jobs=17 ;;
-  1) num_jobs=5 ;;
-  2) num_jobs=9 ;;
-esac
+version="$(make -s -C "$src" kernelrelease)"
+linux="$src/$(make -s -C "$src" image_name)"
+genkernel_tmpdir="/tmp/genkernel-initrd"
+initrd="$genkernel_tmpdir/initrd.img"
+uki="/boot/kernel-$version.efi"
 
-makeopts="-C '${SRC}' LD=ld.bfd"
-
+makeopts="-C '${src}' LD=ld.bfd"
 script=$(cat <<EOF
   make ${makeopts} oldconfig \
     && make ${makeopts} -j"$num_jobs" \
-    && make ${makeopts} install \
     && make ${makeopts} modules_install \
-    && eval "${mkinitramfs}" \
-    && mv ${GRUBCFG} ${GRUBCFG}.old \
-    && grub-mkconfig -o ${GRUBCFG} \
+    && mkdir -p "${genkernel_tmpdir}" \
+    && genkernel initramfs --bootdir="${genkernel_tmpdir}" --initramfs-filename=initrd.img \
+    && ([ ! -f "${uki}" ] || mv "${uki}" "${uki}.old") \
+    && /lib/systemd/ukify build --uname "$version" --linux "$linux" --initrd "$microcode" --initrd "$initrd" --output "$uki" \
+    && rm -rf "${genkernel_tmpdir}" \
     && emerge --ask=n @module-rebuild
 EOF
 )
