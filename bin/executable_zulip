@@ -1,2 +1,2 @@
 #!/bin/bash
-exec ~/.local/bin/Zulip-*.AppImage
+exec ~/.local/bin/Zulip-*.AppImage "$@"
