@@ -15,10 +15,17 @@ case $? in
 esac
 
 version="$(make -s -C "$src" kernelrelease)"
+[ $? -eq 0 ] || exit 1
 linux="$src/$(make -s -C "$src" image_name)"
+[ $? -eq 0 ] || exit 1
 genkernel_tmpdir="/tmp/genkernel-initrd"
 initrd="$genkernel_tmpdir/initrd.img"
-uki="/boot/kernel-$version.efi"
+ukidir="/boot/EFI/Linux"
+uki="$ukidir/kernel-$version.efi"
+os_release=<<EOF
+PRETTY_NAME="Gentoo"
+VERSION_ID=$version
+EOF
 
 makeopts="-C '${src}' LD=ld.bfd"
 script=$(cat <<EOF
@@ -27,8 +34,9 @@ script=$(cat <<EOF
     && make ${makeopts} modules_install \
     && mkdir -p "${genkernel_tmpdir}" \
     && genkernel initramfs --bootdir="${genkernel_tmpdir}" --initramfs-filename=initrd.img \
+    && mkdir -p "$ukidir" \
     && ([ ! -f "${uki}" ] || mv "${uki}" "${uki}.old") \
-    && /lib/systemd/ukify build --uname "$version" --linux "$linux" --initrd "$microcode" --initrd "$initrd" --output "$uki" \
+    && /lib/systemd/ukify build --uname "$version" --linux "$linux" --initrd "$microcode" --initrd "$initrd" --os-release "$os_release" --cmdline @/etc/cmdline --output "$uki" \
     && rm -rf "${genkernel_tmpdir}" \
     && emerge --ask=n @module-rebuild
 EOF
