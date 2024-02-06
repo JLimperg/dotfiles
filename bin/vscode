@@ -1,0 +1,3 @@
+#!/bin/bash
+
+exec vscode --enable-features=OzonePlatform,WaylandWindowDecorations --ozone-platform-hint=auto
