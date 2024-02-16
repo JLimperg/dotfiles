@@ -59,3 +59,18 @@ Host gitlab-lrz
   Hostname gitlab.lrz.de
   User git
   IdentityFile ~/.ssh/id_ed25519
+
+Host github-nixos-server
+  Hostname github.com
+  User git
+  IdentityFile ~/.ssh/github-nixos-server
+
+Host github-debattierclub-freiburg
+  Hostname github.com
+  User git
+  IdentityFile ~/.ssh/github-debattierclub-freiburg
+
+Host github-tabbycat
+  Hostname github.com
+  User git
+  IdentityFile ~/.ssh/github-tabbycat
