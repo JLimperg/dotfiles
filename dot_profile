@@ -1,5 +1,5 @@
 if which emacsclient &> /dev/null; then
-  export VISUAL="/usr/bin/emacsclient -a /usr/bin/vim"
+  export VISUAL="/usr/bin/emacsclient -a vim"
 else
   export VISUAL=vim
 fi
