@@ -1,8 +1,10 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 
 if which nvim &> /dev/null; then
   exec nvim "$@"
+elif test -x /run/current-system/sw/bin/vim; then
+  exec /run/current-system/sw/bin/vim "$@"
 else
-  exec vim "$@"
+  exec /usr/bin/vim "$@"
 fi
