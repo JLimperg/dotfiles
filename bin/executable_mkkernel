@@ -14,6 +14,9 @@ case $? in
      microcode="/boot/intel-uc.img" ;;
 esac
 
+# This is needed for `make kernelrelease` and `make image_name` to work
+sudo make -C "$src" oldconfig || exit 1
+
 version="$(make -s -C "$src" kernelrelease)"
 [ $? -eq 0 ] || exit 1
 linux="$src/$(make -s -C "$src" image_name)"
@@ -29,8 +32,7 @@ EOF
 
 makeopts="-C '${src}' LD=ld.bfd"
 script=$(cat <<EOF
-  make ${makeopts} oldconfig \
-    && make ${makeopts} -j"$num_jobs" \
+    make ${makeopts} -j"$num_jobs" \
     && make ${makeopts} modules_install \
     && mkdir -p "${genkernel_tmpdir}" \
     && genkernel initramfs --bootdir="${genkernel_tmpdir}" --initramfs-filename=initrd.img \
