@@ -1,8 +1,8 @@
 #!/bin/bash
 {{- if eq .chezmoi.hostname "jannis-bizlappy" }}
-exec ~/.local/bin/Zulip-*.AppImage --ozone-platform-hint=auto "$@"
+exec ~/.local/bin/Zulip-*.AppImage --ozone-platform-hint=wayland "$@"
 {{- else if eq .chezmoi.hostname "jannis-desktop" }}
-exec ~/.local/bin/Zulip-*.AppImage --ozone-platform-hint=auto "$@" --enable-features=WaylandWindowDecorations
+exec ~/.local/bin/Zulip-*.AppImage --ozone-platform-hint=wayland "$@" --enable-features=WaylandWindowDecorations
 {{- else -}}
 exec ~/.local/bin/Zulip-*.AppImage "$@"
 {{- end }}
